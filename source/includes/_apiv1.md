@@ -14,7 +14,7 @@ curl "http://api.pricels.com/v1"
 ```json
 {
   "active": true,
-  "name" : "YOUR COMPANY NAME"
+  "name" : "YOUR COMPANY NAME",
   "api_usage_cap": 1000,
   "api_last_used": "2015-02-17",
   "api_daily_usage": 2,
