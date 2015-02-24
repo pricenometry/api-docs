@@ -13,6 +13,9 @@ curl "http://api.pricels.com/v1"
 
 ```json
 {
+  "response": {
+    "status": 200
+  },
   "active": true,
   "api_usage_cap": 100000000,
   "api_last_used": "2015-02-24",

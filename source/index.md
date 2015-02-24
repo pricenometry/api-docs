@@ -64,6 +64,9 @@ You must replace `YOUR-ACCESS-TOKEN` with your API key.
 
 ```json
 {
+  "response": {
+    "status": 200
+  },
   "url": "http://www.amazon.com/Google-Chromecast-Streaming-Media-Player/dp/B00DR0PDNE",
   "date": "2015-02-10",
   "id": "B00DR0PDNE",
