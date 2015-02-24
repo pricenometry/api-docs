@@ -226,6 +226,154 @@ You must replace `:CONTAINER` with the available container you are searching in 
 
 
 
+## Get Product in JSON
+
+> Request example
+
+```shell
+curl "http://api.pricels.com/v1/amazon-offers/B00DR0PDNE"
+  -H "Authorization: Token token=YOUR-ACCESS-TOKEN"
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "response": {
+    "status": 200
+  },
+  "url": "http://www.amazon.com/Google-Chromecast-Streaming-Media-Player/dp/B00DR0PDNE",
+  "date": "2015-02-24",
+  "id": "B00DR0PDNE",
+  "tags": [
+    "Google",
+    "Chromecast",
+    "HDMI",
+    "Streaming",
+    "Media",
+    "Player",
+    "Inc.",
+    "H2G2-42",
+    "86002596-01"
+  ],
+  "name": "Google Chromecast HDMI Streaming Media Player",
+  "description": "Amazon.com: Google Chromecast HDMI Streaming Media Player: Electronics",
+  "type": "Offer",
+  "image": "http://ecx.images-amazon.com/images/I/811nvG%2BLgML._SL1500_.jpg",
+  "sku": "B00DR0PDNE",
+  "screenshot": "B00DR0PDNE/2015-02-24.jpg",
+  "price": "30.07",
+  "original_price": "35.00",
+  "facebook_shares": 48466,
+  "google_shares": 5776,
+  "twitter_shares": 177,
+  "reddit_shares": 149,
+  "linkedin_shares": 364,
+  "pinterest_shares": 106,
+  "stumbleupon_shares": 23,
+  "total_shares": 55061
+}
+```
+
+Search products based on a query or key word.
+
+### HTTP Request
+
+`GET http://api.pricels.com/v1/:CONTAINER/:ID`
+
+### Query Parameters
+
+Parameter | Required | Description
+--------- | ------- | -----------
+access_token | true | Access token used to authenticate
+:CONTAINER | true| The available container
+:ID | true | Product ID
+
+<aside class="notice">
+You must replace `:CONTAINER` with the available container and `:ID` with the product ID.
+</aside>
+
+
+
+
+## Get Product in XML
+
+> Request example
+
+```shell
+curl "http://api.pricels.com/v1/amazon-offers/B00DR0PDNE.xml"
+  -H "Authorization: Token token=YOUR-ACCESS-TOKEN"
+```
+
+> The above command returns XML structured like this:
+
+```xml
+<hash>
+  <response>
+    <status type="integer">200</status>
+  </response>
+  <url>
+  http://www.amazon.com/Google-Chromecast-Streaming-Media-Player/dp/B00DR0PDNE
+  </url>
+  <date>2015-02-24</date>
+  <id>B00DR0PDNE</id>
+  <tags type="array">
+    <tag>Google</tag>
+    <tag>Chromecast</tag>
+    <tag>HDMI</tag>
+    <tag>Streaming</tag>
+    <tag>Media</tag>
+    <tag>Player</tag>
+    <tag>Inc.</tag>
+    <tag>H2G2-42</tag>
+    <tag>86002596-01</tag>
+  </tags>
+  <name>Google Chromecast HDMI Streaming Media Player</name>
+  <description>
+  Amazon.com: Google Chromecast HDMI Streaming Media Player: Electronics
+  </description>
+  <type>Offer</type>
+  <image>
+  http://ecx.images-amazon.com/images/I/811nvG%2BLgML._SL1500_.jpg
+  </image>
+  <sku>B00DR0PDNE</sku>
+  <screenshot>B00DR0PDNE/2015-02-24.jpg</screenshot>
+  <price>30.07</price>
+  <original-price>35.00</original-price>
+  <facebook-shares type="integer">48466</facebook-shares>
+  <google-shares type="integer">5776</google-shares>
+  <twitter-shares type="integer">177</twitter-shares>
+  <reddit-shares type="integer">149</reddit-shares>
+  <linkedin-shares type="integer">364</linkedin-shares>
+  <pinterest-shares type="integer">106</pinterest-shares>
+  <stumbleupon-shares type="integer">23</stumbleupon-shares>
+  <total-shares type="integer">55061</total-shares>
+</hash>
+```
+
+Search products based on a query or key word.
+
+### HTTP Request
+
+`GET http://api.pricels.com/v1/:CONTAINER/:ID.xml`
+
+### Query Parameters
+
+Parameter | Required | Description
+--------- | ------- | -----------
+access_token | true | Access token used to authenticate
+:CONTAINER | true| The available container
+:ID | true | Product ID
+
+<aside class="notice">
+You must replace `:CONTAINER` with the available container and `:ID` with the product ID.
+</aside>
+
+
+
+
+
+
 
 
 
