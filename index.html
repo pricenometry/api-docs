@@ -58,7 +58,7 @@
 </blockquote>
 <pre><code class="highlight shell"><span class="c"># With shell, you can just pass the correct header with each request</span>
 curl http://api.pricels.com
-  -H <span class="s2">"Authorization: Token token='YOUR-ACCESS-TOKEN'"</span>
+  -H <span class="s2">"Authorization: Token token=YOUR-ACCESS-TOKEN"</span>
 </code></pre>
 
 <blockquote>
@@ -73,7 +73,7 @@ curl http://api.pricels.com
 
 <p>Or in a header that looks like the following:</p>
 
-<p><code class="prettyprint">Authorization: Token token=&quot;YOUR-ACCESS-TOKEN&quot;</code></p>
+<p><code class="prettyprint">Authorization: Token token=YOUR-ACCESS-TOKEN</code></p>
 
 <aside class="notice">
 You must replace `YOUR-ACCESS-TOKEN` with your API key.
@@ -216,13 +216,13 @@ You must replace `YOUR-ACCESS-TOKEN` with your API key.
 
           <h1 id="api-v1">API V1</h1>
 
-<h2 id="get-status">Get Status</h2>
+<h2 id="get-status-in-json">Get Status in JSON</h2>
 
 <blockquote>
 <p>Request example</p>
 </blockquote>
 <pre><code class="highlight shell">curl <span class="s2">"http://api.pricels.com/v1"</span>
-  -H <span class="s2">"Authorization: Token token="</span>YOUR-ACCESS-TOKEN<span class="s2">""</span>
+  -H <span class="s2">"Authorization: Token token=YOUR-ACCESS-TOKEN"</span>
 </code></pre>
 
 <blockquote>
@@ -311,6 +311,246 @@ You must replace `YOUR-ACCESS-TOKEN` with your API key.
 <td>Data still waiting to be added to processing</td>
 </tr>
 </tbody></table>
+
+<h2 id="get-status-in-xml">Get Status in XML</h2>
+
+<blockquote>
+<p>Request example</p>
+</blockquote>
+<pre><code class="highlight shell">curl <span class="s2">"http://api.pricels.com/v1.xml"</span>
+  -H <span class="s2">"Authorization: Token token=YOUR-ACCESS-TOKEN"</span>
+</code></pre>
+
+<blockquote>
+<p>The above command returns XML structured like this:</p>
+</blockquote>
+<pre><code class="highlight xml"><span class="nt">&lt;hash&gt;</span>
+  <span class="nt">&lt;response&gt;</span>
+    <span class="nt">&lt;status</span> <span class="na">type=</span><span class="s">"integer"</span><span class="nt">&gt;</span>200<span class="nt">&lt;/status&gt;</span>
+  <span class="nt">&lt;/response&gt;</span>
+  <span class="nt">&lt;active</span> <span class="na">type=</span><span class="s">"boolean"</span><span class="nt">&gt;</span>true<span class="nt">&lt;/active&gt;</span>
+  <span class="nt">&lt;api-usage-cap</span> <span class="na">type=</span><span class="s">"integer"</span><span class="nt">&gt;</span>1000<span class="nt">&lt;/api-usage-cap&gt;</span>
+  <span class="nt">&lt;api-last-used&gt;</span>2015-02-24<span class="nt">&lt;/api-last-used&gt;</span>
+  <span class="nt">&lt;api-daily-usage</span> <span class="na">type=</span><span class="s">"integer"</span><span class="nt">&gt;</span>38<span class="nt">&lt;/api-daily-usage&gt;</span>
+  <span class="nt">&lt;available&gt;</span>
+    <span class="nt">&lt;amazon-offers&gt;</span>2.9M<span class="nt">&lt;/amazon-offers&gt;</span>
+    <span class="nt">&lt;walmart-offers&gt;</span>135.9K<span class="nt">&lt;/walmart-offers&gt;</span>
+    <span class="nt">&lt;costco-offers&gt;</span>83K<span class="nt">&lt;/costco-offers&gt;</span>
+    <span class="nt">&lt;target-offers&gt;</span>38.4K<span class="nt">&lt;/target-offers&gt;</span>
+  <span class="nt">&lt;/available&gt;</span>
+  <span class="nt">&lt;indexing&gt;</span>63<span class="nt">&lt;/indexing&gt;</span>
+  <span class="nt">&lt;processing&gt;</span>453.3K<span class="nt">&lt;/processing&gt;</span>
+  <span class="nt">&lt;pending&gt;</span>947.2M<span class="nt">&lt;/pending&gt;</span>
+<span class="nt">&lt;/hash&gt;</span>
+</code></pre>
+
+<p>Check the status of your current api usage as well as available data sources to pull from.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET http://api.pricels.com/v1.xml</code></p>
+
+<h3 id="query-parameters">Query Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>access_token</td>
+<td>true</td>
+<td>Access token used to authenticate</td>
+</tr>
+</tbody></table>
+
+<h3 id="status-types">Status Types</h3>
+
+<table><thead>
+<tr>
+<th>Status Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>active</td>
+<td>Api Key is still active</td>
+</tr>
+<tr>
+<td>api_usage_cap</td>
+<td>Max number of allowed api calls per day (can be unlimited)</td>
+</tr>
+<tr>
+<td>api_last_used</td>
+<td>Date of the last call your key made to our api</td>
+</tr>
+<tr>
+<td>api_daily_usage</td>
+<td>Total number of api calls made on api_last_used date</td>
+</tr>
+<tr>
+<td>available</td>
+<td>Name and total number of data containers available for you to research</td>
+</tr>
+<tr>
+<td>indexing</td>
+<td>Collected data being added to search</td>
+</tr>
+<tr>
+<td>processing</td>
+<td>Data still waiting to be processed</td>
+</tr>
+<tr>
+<td>pending</td>
+<td>Data still waiting to be added to processing</td>
+</tr>
+</tbody></table>
+
+<h2 id="search-all-products-in-json">Search All Products in JSON</h2>
+
+<blockquote>
+<p>Request example</p>
+</blockquote>
+<pre><code class="highlight shell">curl <span class="s2">"http://api.pricels.com/v1/search/chromecast"</span>
+  -H <span class="s2">"Authorization: Token token=YOUR-ACCESS-TOKEN"</span>
+</code></pre>
+
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre><code class="highlight json"><span class="p">{</span><span class="w">
+  </span><span class="s2">"response"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"results"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"B00DR0PDNE"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Google Chromecast HDMI Streaming Media Player"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"container"</span><span class="p">:</span><span class="w"> </span><span class="s2">"amazon-offers"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"811571013579"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Google Chromecast HDMI Streaming Media Player"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"container"</span><span class="p">:</span><span class="w"> </span><span class="s2">"walmart-offers"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Google Chromecast HDMI Streaming Media Player"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"15460778"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"container"</span><span class="p">:</span><span class="w"> </span><span class="s2">"target-offers"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"945132"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Google Chromecast HDMI Streaming Media Player with $10 Google Play Credit"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"container"</span><span class="p">:</span><span class="w"> </span><span class="s2">"costco-offers"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<p>Search all availble products based on a query or key word.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET http://api.pricels.com/v1/search/:QUERY</code></p>
+
+<h3 id="query-parameters">Query Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>access_token</td>
+<td>true</td>
+<td>Access token used to authenticate</td>
+</tr>
+<tr>
+<td>:QUERY</td>
+<td>true</td>
+<td>What you are searching for</td>
+</tr>
+</tbody></table>
+
+<aside class="notice">
+You must replace `:QUERY` with what you are searching for.
+</aside>
+
+<h2 id="search-all-products-in-xml">Search All Products in XML</h2>
+
+<blockquote>
+<p>Request example</p>
+</blockquote>
+<pre><code class="highlight shell">curl <span class="s2">"http://api.pricels.com/v1/search/chromecast.xml"</span>
+  -H <span class="s2">"Authorization: Token token=YOUR-ACCESS-TOKEN"</span>
+</code></pre>
+
+<blockquote>
+<p>The above command returns XML structured like this:</p>
+</blockquote>
+<pre><code class="highlight xml"><span class="nt">&lt;hash&gt;</span>
+  <span class="nt">&lt;response&gt;</span>
+    <span class="nt">&lt;status</span> <span class="na">type=</span><span class="s">"integer"</span><span class="nt">&gt;</span>200<span class="nt">&lt;/status&gt;</span>
+  <span class="nt">&lt;/response&gt;</span>
+  <span class="nt">&lt;results</span> <span class="na">type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;result&gt;</span>
+      <span class="nt">&lt;id&gt;</span>B00DR0PDNE<span class="nt">&lt;/id&gt;</span>
+      <span class="nt">&lt;name&gt;</span>Google Chromecast HDMI Streaming Media Player<span class="nt">&lt;/name&gt;</span>
+      <span class="nt">&lt;container&gt;</span>amazon-offers<span class="nt">&lt;/container&gt;</span>
+    <span class="nt">&lt;/result&gt;</span>
+    <span class="nt">&lt;result&gt;</span>
+      <span class="nt">&lt;id&gt;</span>811571013579<span class="nt">&lt;/id&gt;</span>
+      <span class="nt">&lt;name&gt;</span>Google Chromecast HDMI Streaming Media Player<span class="nt">&lt;/name&gt;</span>
+      <span class="nt">&lt;container&gt;</span>walmart-offers<span class="nt">&lt;/container&gt;</span>
+    <span class="nt">&lt;/result&gt;</span>
+    <span class="nt">&lt;result&gt;</span>
+      <span class="nt">&lt;name&gt;</span>Google Chromecast HDMI Streaming Media Player<span class="nt">&lt;/name&gt;</span>
+      <span class="nt">&lt;id&gt;</span>15460778<span class="nt">&lt;/id&gt;</span>
+      <span class="nt">&lt;container&gt;</span>target-offers<span class="nt">&lt;/container&gt;</span>
+    <span class="nt">&lt;/result&gt;</span>
+    <span class="nt">&lt;result&gt;</span>
+      <span class="nt">&lt;id&gt;</span>945132<span class="nt">&lt;/id&gt;</span>
+      <span class="nt">&lt;name&gt;</span>Google Chromecast HDMI Streaming Media Player with $10 Google Play Credit<span class="nt">&lt;/name&gt;</span>
+      <span class="nt">&lt;container&gt;</span>costco-offers<span class="nt">&lt;/container&gt;</span>
+    <span class="nt">&lt;/result&gt;</span>
+  <span class="nt">&lt;/results&gt;</span>
+<span class="nt">&lt;/hash&gt;</span>
+</code></pre>
+
+<p>Search all availble products based on a query or key word</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET http://api.pricels.com/v1/search/:QUERY.xml</code></p>
+
+<h3 id="query-parameters">Query Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>access_token</td>
+<td>true</td>
+<td>Access token used to authenticate</td>
+</tr>
+<tr>
+<td>:QUERY</td>
+<td>true</td>
+<td>What you are searching for</td>
+</tr>
+</tbody></table>
+
+<aside class="notice">
+You must replace `:QUERY` with what you are searching for.
+</aside>
 
           <h1 id="changelog">Changelog</h1>
 
