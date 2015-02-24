@@ -121,6 +121,123 @@ pending | Data still waiting to be added to processing
 
 
 
+## Search Products in JSON
+
+> Request example
+
+```shell
+curl "http://api.pricels.com/v1/amazon-offers/search/chromecast"
+  -H "Authorization: Token token=YOUR-ACCESS-TOKEN"
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "response": {
+    "status": 200
+  },
+  "results": [
+    {
+      "id": "B00DR0PDNE",
+      "name": "Google Chromecast HDMI Streaming Media Player",
+      "container": "amazon-offers"
+    }
+  ]
+}
+```
+
+Search products based on a query or key word.
+
+### HTTP Request
+
+`GET http://api.pricels.com/v1/:CONTAINER/search/:QUERY`
+
+### Query Parameters
+
+Parameter | Required | Description
+--------- | ------- | -----------
+access_token | true | Access token used to authenticate
+:CONTAINER | true| The available container you are searching in
+:QUERY | true | What you are searching for
+
+<aside class="notice">
+You must replace `:CONTAINER` with the available container you are searching in and `:QUERY` with what you are searching for.
+</aside>
+
+
+
+
+## Search Products in XML
+
+> Request example
+
+```shell
+curl "http://api.pricels.com/v1/amazon-offers/search/chromecast.xml"
+  -H "Authorization: Token token=YOUR-ACCESS-TOKEN"
+```
+
+> The above command returns XML structured like this:
+
+```xml
+<hash>
+  <response>
+    <status type="integer">200</status>
+  </response>
+  <results type="array">
+    <result>
+      <id>B00DR0PDNE</id>
+      <name>Google Chromecast HDMI Streaming Media Player</name>
+      <container>amazon-offers</container>
+    </result>
+  </results>
+</hash>
+```
+
+Search products based on a query or key word.
+
+### HTTP Request
+
+`GET http://api.pricels.com/v1/:CONTAINER/search/:QUERY.xml`
+
+### Query Parameters
+
+Parameter | Required | Description
+--------- | ------- | -----------
+access_token | true | Access token used to authenticate
+:CONTAINER | true| The available container you are searching in
+:QUERY | true | What you are searching for
+
+<aside class="notice">
+You must replace `:CONTAINER` with the available container you are searching in and `:QUERY` with what you are searching for.
+</aside>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ## Search All Products in JSON
 
