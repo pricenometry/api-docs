@@ -214,18 +214,6 @@ You must replace `:CONTAINER` with the available container you are searching in 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 ## Get Product in JSON
 
 > Request example
@@ -275,7 +263,7 @@ curl "http://api.pricels.com/v1/amazon-offers/B00DR0PDNE"
 }
 ```
 
-Search products based on a query or key word.
+Get most up to date product information by product id.
 
 ### HTTP Request
 
@@ -351,7 +339,7 @@ curl "http://api.pricels.com/v1/amazon-offers/B00DR0PDNE.xml"
 </hash>
 ```
 
-Search products based on a query or key word.
+Get most up to date product information by product id.
 
 ### HTTP Request
 
@@ -372,16 +360,61 @@ You must replace `:CONTAINER` with the available container and `:ID` with the pr
 
 
 
+## Get Product History in JSON
 
+> Request example
 
+```shell
+curl "http://api.pricels.com/v1/amazon-offers/B00DR0PDNE/history"
+  -H "Authorization: Token token=YOUR-ACCESS-TOKEN"
+```
 
+> The above command returns JSON structured like this:
 
+```json
+{
+  "response": {
+    "status": 200
+  },
+  "id": "B00DR0PDNE",
+  "name": "Google Chromecast HDMI Streaming Media Player",
+  "sku": {
+    "2015-02-09": "B00DR0PDNE"
+  },
+  "screenshot": {
+    "2015-02-09": "B00DR0PDNE/2015-02-09.jpg",
+    "2015-02-10": "B00DR0PDNE/2015-02-10.jpg",
+    "2015-02-21": "B00DR0PDNE/2015-02-21.jpg",
+    "2015-02-24": "B00DR0PDNE/2015-02-24.jpg"
+  },
+  "price": {
+    "2015-02-09": "32.49",
+    "2015-02-10": "31.78",
+    "2015-02-21": "30.07"
+  },
+  "original_price": {
+    "2015-02-09": "35.00"
+  }
+}
+```
 
+Get most up to date product history by product id.
 
+### HTTP Request
 
+`GET http://api.pricels.com/v1/:CONTAINER/:ID/history`
 
+### Query Parameters
 
+Parameter | Required | Description
+--------- | ------- | -----------
+access_token | true | Access token used to authenticate
+:CONTAINER | true| The available container
+:ID | true | Product ID
 
+<aside class="notice">
+You must replace `:CONTAINER` with the available container and `:ID` with the product ID.
+</aside>
 
 
 
