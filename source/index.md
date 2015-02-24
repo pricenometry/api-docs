@@ -39,7 +39,7 @@ If you have any question please visit [our support pages](http://pricels.com).
 ```shell
 # With shell, you can just pass the correct header with each request
 curl http://api.pricels.com
-  -H "Authorization: Token token='YOUR-ACCESS-TOKEN'"
+  -H "Authorization: Token token=YOUR-ACCESS-TOKEN"
 ```
 
 > Make sure to replace `YOUR-ACCESS-TOKEN` with your API access key.
@@ -52,7 +52,7 @@ The Pricels API expects for the API key to be included in all API requests to th
 
 Or in a header that looks like the following:
 
-`Authorization: Token token="YOUR-ACCESS-TOKEN"`
+`Authorization: Token token=YOUR-ACCESS-TOKEN`
 
 <aside class="notice">
 You must replace `YOUR-ACCESS-TOKEN` with your API key.
