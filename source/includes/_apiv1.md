@@ -328,7 +328,7 @@ You must replace `:CONTAINER` with the available container you are matching agai
 > Request example
 
 ```shell
-curl "http://api.pricels.com/v1/walmart-offers/match.xml"
+curl "http://api.pricels.com/v1/walmart-offers/match.xml?mpn=86002596-01"
   -H "Authorization: Token token=YOUR-ACCESS-TOKEN"
 ```
 
@@ -427,22 +427,6 @@ total_shares | false | Number of times product has been shared on Social Media
 <aside class="notice">
 You must replace `:CONTAINER` with the available container you are matching against.
 </aside>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -785,17 +769,6 @@ You must replace `:CONTAINER` with the available container, `:ID` with the Produ
 
 
 
-
-
-
-
-
-
-
-
-
-
-
 ## Search All Products in JSON
 
 > Request example
@@ -914,3 +887,166 @@ access_token | true | Access token used to authenticate
 <aside class="notice">
 You must replace `:QUERY` with what you are searching for.
 </aside>
+
+
+
+## Match All Products in JSON
+
+> Request example
+
+```shell
+curl "http://api.pricels.com/v1/match?name=chromecast"
+  -H "Authorization: Token token=YOUR-ACCESS-TOKEN"
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "response": {
+    "status": 200
+  },
+  "results": [
+    {
+      "id": "B00DR0PDNE",
+      "name": "Google Chromecast HDMI Streaming Media Player",
+      "container": "amazon-offers"
+    },
+    {
+      "id": "811571013579",
+      "name": "Google Chromecast HDMI Streaming Media Player",
+      "container": "walmart-offers"
+    },
+    {
+      "name": "Google Chromecast HDMI Streaming Media Player",
+      "id": "15460778",
+      "container": "target-offers"
+    },
+    {
+      "id": "945132",
+      "name": "Google Chromecast HDMI Streaming Media Player with $10 Google Play Credit",
+      "container": "costco-offers"
+    }
+  ]
+}
+```
+
+Match all Products based on a specific set of known parameters and values.
+
+### HTTP Request
+
+`GET http://api.pricels.com/v1/match`
+
+### Query Parameters
+
+Parameter | Required | Description
+--------- | ------- | -----------
+access_token | true | Access token used to authenticate
+:CONTAINER | true| The available container you are searching in
+:QUERY | true | What you are searching for
+results | false | Number of Results you want back (default: 10)
+fetch | false | Automatically crawl new data (default: true)
+social | false | Automatically fetch new social data (default: false)
+url | false | Unique URL for product
+date | false | When data was last gathered
+id | false | Unique ID for product
+tags | false | Tags associated with product
+name | false | Unique name of product
+description | false | Given description for product
+type | false | Product Type
+image | false | Unique product image
+sku | false | Unique product sku
+mpn | false | Unique product manufacturer part number
+model | false | Unique product model number
+price | false | Price of product at time of sale
+original_price | false | Original retail price of the product
+facebook_shares | false | Number of times product has been shared on Facebook
+google_shares | false | Number of times product has been shared on Google Plus
+twitter_shares | false | Number of times product has been shared on Twitter
+reddit_shares | false | Number of times product has been shared on Reddit
+linkedin_shares | false | Number of times product has been shared on LinkedIn
+pinterest_shares | false | Number of times product has been shared on Pinterest
+stumbleupon_shares | false | Number of times product has been shared on StumbleUpon
+total_shares | false | Number of times product has been shared on Social Media
+
+
+
+
+## Match All Products in XML
+
+> Request example
+
+```shell
+curl "http://api.pricels.com/v1/match.xml?name=chromecast"
+  -H "Authorization: Token token=YOUR-ACCESS-TOKEN"
+```
+
+> The above command returns XML structured like this:
+
+```xml
+<hash>
+  <response>
+    <status type="integer">200</status>
+  </response>
+  <results type="array">
+    <result>
+      <id>B00DR0PDNE</id>
+      <name>Google Chromecast HDMI Streaming Media Player</name>
+      <container>amazon-offers</container>
+    </result>
+    <result>
+      <id>811571013579</id>
+      <name>Google Chromecast HDMI Streaming Media Player</name>
+      <container>walmart-offers</container>
+    </result>
+    <result>
+      <name>Google Chromecast HDMI Streaming Media Player</name>
+      <id>15460778</id>
+      <container>target-offers</container>
+    </result>
+    <result>
+      <id>945132</id>
+      <name>Google Chromecast HDMI Streaming Media Player with $10 Google Play Credit</name>
+      <container>costco-offers</container>
+    </result>
+  </results>
+</hash>
+```
+
+Match all Products based on a specific set of known parameters and values.
+
+### HTTP Request
+
+`GET http://api.pricels.com/v1/match.xml`
+
+### Query Parameters
+
+Parameter | Required | Description
+--------- | ------- | -----------
+access_token | true | Access token used to authenticate
+:CONTAINER | true| The available container you are searching in
+:QUERY | true | What you are searching for
+results | false | Number of Results you want back (default: 10)
+fetch | false | Automatically crawl new data (default: true)
+social | false | Automatically fetch new social data (default: false)
+url | false | Unique URL for product
+date | false | When data was last gathered
+id | false | Unique ID for product
+tags | false | Tags associated with product
+name | false | Unique name of product
+description | false | Given description for product
+type | false | Product Type
+image | false | Unique product image
+sku | false | Unique product sku
+mpn | false | Unique product manufacturer part number
+model | false | Unique product model number
+price | false | Price of product at time of sale
+original_price | false | Original retail price of the product
+facebook_shares | false | Number of times product has been shared on Facebook
+google_shares | false | Number of times product has been shared on Google Plus
+twitter_shares | false | Number of times product has been shared on Twitter
+reddit_shares | false | Number of times product has been shared on Reddit
+linkedin_shares | false | Number of times product has been shared on LinkedIn
+pinterest_shares | false | Number of times product has been shared on Pinterest
+stumbleupon_shares | false | Number of times product has been shared on StumbleUpon
+total_shares | false | Number of times product has been shared on Social Media
