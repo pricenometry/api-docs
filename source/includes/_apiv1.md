@@ -147,7 +147,7 @@ curl "http://api.pricels.com/v1/amazon-offers/search/chromecast"
 }
 ```
 
-Search products based on a query or key word.
+Search Products based on a query or key word.
 
 ### HTTP Request
 
@@ -160,6 +160,8 @@ Parameter | Required | Description
 access_token | true | Access token used to authenticate
 :CONTAINER | true| The available container you are searching in
 :QUERY | true | What you are searching for
+fetch | false | Automatically crawl new data (default: true)
+social | false | Automatically fetch new social data (default: false)
 
 <aside class="notice">
 You must replace `:CONTAINER` with the available container you are searching in and `:QUERY` with what you are searching for.
@@ -194,7 +196,7 @@ curl "http://api.pricels.com/v1/amazon-offers/search/chromecast.xml"
 </hash>
 ```
 
-Search products based on a query or key word.
+Search Products based on a query or key word.
 
 ### HTTP Request
 
@@ -207,6 +209,8 @@ Parameter | Required | Description
 access_token | true | Access token used to authenticate
 :CONTAINER | true| The available container you are searching in
 :QUERY | true | What you are searching for
+fetch | false | Automatically crawl new data (default: true)
+social | false | Automatically fetch new social data (default: false)
 
 <aside class="notice">
 You must replace `:CONTAINER` with the available container you are searching in and `:QUERY` with what you are searching for.
@@ -263,7 +267,7 @@ curl "http://api.pricels.com/v1/amazon-offers/B00DR0PDNE"
 }
 ```
 
-Get most up to date product information by product id.
+Get most up to date Product information by Product id.
 
 ### HTTP Request
 
@@ -276,9 +280,11 @@ Parameter | Required | Description
 access_token | true | Access token used to authenticate
 :CONTAINER | true| The available container
 :ID | true | Product ID
+fetch | false | Automatically crawl new data (default: true)
+social | false | Automatically fetch new social data (default: false)
 
 <aside class="notice">
-You must replace `:CONTAINER` with the available container and `:ID` with the product ID.
+You must replace `:CONTAINER` with the available container and `:ID` with the Product ID.
 </aside>
 
 
@@ -339,7 +345,7 @@ curl "http://api.pricels.com/v1/amazon-offers/B00DR0PDNE.xml"
 </hash>
 ```
 
-Get most up to date product information by product id.
+Get most up to date Product information by Product id.
 
 ### HTTP Request
 
@@ -352,9 +358,11 @@ Parameter | Required | Description
 access_token | true | Access token used to authenticate
 :CONTAINER | true| The available container
 :ID | true | Product ID
+fetch | false | Automatically crawl new data (default: true)
+social | false | Automatically fetch new social data (default: false)
 
 <aside class="notice">
-You must replace `:CONTAINER` with the available container and `:ID` with the product ID.
+You must replace `:CONTAINER` with the available container and `:ID` with the Product ID.
 </aside>
 
 
@@ -398,7 +406,7 @@ curl "http://api.pricels.com/v1/amazon-offers/B00DR0PDNE/history"
 }
 ```
 
-Get most up to date product history by product id.
+Get most up to date Product history by Product id.
 
 ### HTTP Request
 
@@ -411,10 +419,150 @@ Parameter | Required | Description
 access_token | true | Access token used to authenticate
 :CONTAINER | true| The available container
 :ID | true | Product ID
+fetch | false | Automatically crawl new data (default: true)
+social | false | Automatically fetch new social data (default: false)
 
 <aside class="notice">
-You must replace `:CONTAINER` with the available container and `:ID` with the product ID.
+You must replace `:CONTAINER` with the available container and `:ID` with the Product ID.
 </aside>
+
+
+
+
+## Get Product Screenshot Image
+
+> Request example
+
+```shell
+curl "http://api.pricels.com/v1/amazon-offers/B00DR0PDNE/2015-02-24.jpg"
+  -H "Authorization: Token token=YOUR-ACCESS-TOKEN"
+```
+
+> The above command redirects to a URL like the one below:
+
+```html
+  <html>
+    <body>
+    You are being
+    <a href="https://amazon-screenshots.pricels.com/B00DR0PDNE/2015-02-24.jpg?AWSAccessKeyId=AUTO-GENERATED&Signature=AUTO-GENERATED&Expires=24-HOURS">redirected</a>.
+    </body>
+  </html>
+```
+
+Get Product redirect to screenshot image.
+
+### HTTP Request
+
+`GET http://api.pricels.com/v1/:CONTAINER/:ID/:SCREENSHOT_DATE.jpg`
+
+### Query Parameters
+
+Parameter | Required | Description
+--------- | ------- | -----------
+access_token | true | Access token used to authenticate
+:CONTAINER | true| The available container
+:ID | true | Product ID
+:SCREENSHOT_DATE | true | Date screenshot was captured
+
+<aside class="notice">
+You must replace `:CONTAINER` with the available container, `:ID` with the Product ID and `:SCREENSHOT_DATE` with date screenshot was taken.
+</aside>
+
+
+
+
+## Get Product Screenshot in JSON
+
+> Request example
+
+```shell
+curl "http://api.pricels.com/v1/amazon-offers/B00DR0PDNE/2015-02-24"
+  -H "Authorization: Token token=YOUR-ACCESS-TOKEN"
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "response": {
+    "status": 200
+  },
+  "id": "B00DR0PDNE",
+  "redirect_url": "https://amazon-screenshots.pricels.com/B00DR0PDNE/2015-02-24.jpg?AWSAccessKeyId=AUTO-GENERATED&Signature=AUTO-GENERATED&Expires=24-HOURS"
+}
+```
+
+Get Product screenshot in JSON form.
+
+### HTTP Request
+
+`GET http://api.pricels.com/v1/:CONTAINER/:ID/:SCREENSHOT_DATE`
+
+### Query Parameters
+
+Parameter | Required | Description
+--------- | ------- | -----------
+access_token | true | Access token used to authenticate
+:CONTAINER | true| The available container
+:ID | true | Product ID
+:SCREENSHOT_DATE | true | Date screenshot was captured
+
+<aside class="notice">
+You must replace `:CONTAINER` with the available container, `:ID` with the Product ID and `:SCREENSHOT_DATE` with date screenshot was taken.
+</aside>
+
+
+
+## Get Product Screenshot in XML
+
+> Request example
+
+```shell
+curl "http://api.pricels.com/v1/amazon-offers/B00DR0PDNE/2015-02-24.xml"
+  -H "Authorization: Token token=YOUR-ACCESS-TOKEN"
+```
+
+> The above command returns XML structured like this:
+
+```xml
+<hash>
+  <response>
+    <status type="integer">200</status>
+  </response>
+  <id>B00DR0PDNE</id>
+  <redirect-url>
+  https://amazon-screenshots.pricels.com/B00DR0PDNE/2015-02-24.jpg?AWSAccessKeyId=AUTO-GENERATED&Signature=AUTO-GENERATED&Expires=24-HOURS
+  </redirect-url>
+</hash>
+```
+
+Get Product screenshot in XML form.
+
+### HTTP Request
+
+`GET http://api.pricels.com/v1/:CONTAINER/:ID/:SCREENSHOT_DATE.xml`
+
+### Query Parameters
+
+Parameter | Required | Description
+--------- | ------- | -----------
+access_token | true | Access token used to authenticate
+:CONTAINER | true| The available container
+:ID | true | Product ID
+:SCREENSHOT_DATE | true | Date screenshot was captured
+
+<aside class="notice">
+You must replace `:CONTAINER` with the available container, `:ID` with the Product ID and `:SCREENSHOT_DATE` with date screenshot was taken.
+</aside>
+
+
+
+
+
+
+
+
+
 
 
 
@@ -461,7 +609,7 @@ curl "http://api.pricels.com/v1/search/chromecast"
 }
 ```
 
-Search all availble products based on a query or key word.
+Search all availble Products based on a query or key word.
 
 ### HTTP Request
 
@@ -522,7 +670,7 @@ curl "http://api.pricels.com/v1/search/chromecast.xml"
 </hash>
 ```
 
-Search all availble products based on a query or key word
+Search all availble Products based on a query or key word
 
 ### HTTP Request
 
