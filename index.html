@@ -169,6 +169,14 @@ You must replace `YOUR-ACCESS-TOKEN` with your API key.
 <td>Unique product sku</td>
 </tr>
 <tr>
+<td>mpn</td>
+<td>Unique product manufacturer part number</td>
+</tr>
+<tr>
+<td>model</td>
+<td>Unique product model number</td>
+</tr>
+<tr>
 <td>screenshot</td>
 <td>Screenshot taken at the time data was collected</td>
 </tr>
@@ -550,6 +558,440 @@ You must replace `:CONTAINER` with the available container you are searching in 
 
 <aside class="notice">
 You must replace `:CONTAINER` with the available container you are searching in and `:QUERY` with what you are searching for.
+</aside>
+
+<h2 id="match-products-in-json">Match Products in JSON</h2>
+
+<blockquote>
+<p>Request example</p>
+</blockquote>
+<pre><code class="highlight shell">curl <span class="s2">"http://api.pricels.com/v1/walmart-offers/match?model=86002596-01"</span>
+  -H <span class="s2">"Authorization: Token token=YOUR-ACCESS-TOKEN"</span>
+</code></pre>
+
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre><code class="highlight json"><span class="p">{</span><span class="w">
+  </span><span class="s2">"response"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"results"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://www.walmart.com/ip/Google-Chromecast-HDMI-Streaming-Media-Player/33142918"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-02-24"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"open_graph"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Offer"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"811571013579"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"image"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://i5.walmartimages.com/dfw/dce07b8c-cc82/k2-_6f892d53-39df-4687-adae-fd16b2656547.v4.jpg"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"site_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Walmart.com"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"schema_org"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"tags"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="s2">"Google"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Chromecast"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"HDMI"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Streaming"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Media"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Player"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Wal-mart"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Walmart.com"</span><span class="w">
+      </span><span class="p">],</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Google Chromecast HDMI Streaming Media Player"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"productID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"811571013579"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"screenshot"</span><span class="p">:</span><span class="w"> </span><span class="s2">"811571013579/2015-02-23.jpg"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"30.07"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"priceCurrency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"availability"</span><span class="p">:</span><span class="w"> </span><span class="s2">"InStock"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Media Streaming Players"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"811571013579"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"mpn"</span><span class="p">:</span><span class="w"> </span><span class="s2">"86002596-01"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"brand"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Google"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"model"</span><span class="p">:</span><span class="w"> </span><span class="s2">"86002596-01"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"facebook_shares"</span><span class="p">:</span><span class="w"> </span><span class="mi">42</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"google_shares"</span><span class="p">:</span><span class="w"> </span><span class="mi">47</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"twitter_shares"</span><span class="p">:</span><span class="w"> </span><span class="mi">12</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"pinterest_shares"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"stumbleupon_shares"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"total_shares"</span><span class="p">:</span><span class="w"> </span><span class="mi">112</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"container"</span><span class="p">:</span><span class="w"> </span><span class="s2">"walmart-offers"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<p>Match Products in a container based on a specific set of known parameters and values.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET http://api.pricels.com/v1/:CONTAINER/match</code></p>
+
+<h3 id="query-parameters">Query Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>access_token</td>
+<td>true</td>
+<td>Access token used to authenticate</td>
+</tr>
+<tr>
+<td>:CONTAINER</td>
+<td>true</td>
+<td>The available container you are searching in</td>
+</tr>
+<tr>
+<td>:QUERY</td>
+<td>true</td>
+<td>What you are searching for</td>
+</tr>
+<tr>
+<td>results</td>
+<td>false</td>
+<td>Number of Results you want back (default: 1)</td>
+</tr>
+<tr>
+<td>fetch</td>
+<td>false</td>
+<td>Automatically crawl new data (default: true)</td>
+</tr>
+<tr>
+<td>social</td>
+<td>false</td>
+<td>Automatically fetch new social data (default: false)</td>
+</tr>
+<tr>
+<td>url</td>
+<td>false</td>
+<td>Unique URL for product</td>
+</tr>
+<tr>
+<td>date</td>
+<td>false</td>
+<td>When data was last gathered</td>
+</tr>
+<tr>
+<td>id</td>
+<td>false</td>
+<td>Unique ID for product</td>
+</tr>
+<tr>
+<td>tags</td>
+<td>false</td>
+<td>Tags associated with product</td>
+</tr>
+<tr>
+<td>name</td>
+<td>false</td>
+<td>Unique name of product</td>
+</tr>
+<tr>
+<td>description</td>
+<td>false</td>
+<td>Given description for product</td>
+</tr>
+<tr>
+<td>type</td>
+<td>false</td>
+<td>Product Type</td>
+</tr>
+<tr>
+<td>image</td>
+<td>false</td>
+<td>Unique product image</td>
+</tr>
+<tr>
+<td>sku</td>
+<td>false</td>
+<td>Unique product sku</td>
+</tr>
+<tr>
+<td>mpn</td>
+<td>false</td>
+<td>Unique product manufacturer part number</td>
+</tr>
+<tr>
+<td>model</td>
+<td>false</td>
+<td>Unique product model number</td>
+</tr>
+<tr>
+<td>price</td>
+<td>false</td>
+<td>Price of product at time of sale</td>
+</tr>
+<tr>
+<td>original_price</td>
+<td>false</td>
+<td>Original retail price of the product</td>
+</tr>
+<tr>
+<td>facebook_shares</td>
+<td>false</td>
+<td>Number of times product has been shared on Facebook</td>
+</tr>
+<tr>
+<td>google_shares</td>
+<td>false</td>
+<td>Number of times product has been shared on Google Plus</td>
+</tr>
+<tr>
+<td>twitter_shares</td>
+<td>false</td>
+<td>Number of times product has been shared on Twitter</td>
+</tr>
+<tr>
+<td>reddit_shares</td>
+<td>false</td>
+<td>Number of times product has been shared on Reddit</td>
+</tr>
+<tr>
+<td>linkedin_shares</td>
+<td>false</td>
+<td>Number of times product has been shared on LinkedIn</td>
+</tr>
+<tr>
+<td>pinterest_shares</td>
+<td>false</td>
+<td>Number of times product has been shared on Pinterest</td>
+</tr>
+<tr>
+<td>stumbleupon_shares</td>
+<td>false</td>
+<td>Number of times product has been shared on StumbleUpon</td>
+</tr>
+<tr>
+<td>total_shares</td>
+<td>false</td>
+<td>Number of times product has been shared on Social Media</td>
+</tr>
+</tbody></table>
+
+<aside class="notice">
+You must replace `:CONTAINER` with the available container you are matching against.
+</aside>
+
+<h2 id="match-products-in-xml">Match Products in XML</h2>
+
+<blockquote>
+<p>Request example</p>
+</blockquote>
+<pre><code class="highlight shell">curl <span class="s2">"http://api.pricels.com/v1/walmart-offers/match.xml?mpn=86002596-01"</span>
+  -H <span class="s2">"Authorization: Token token=YOUR-ACCESS-TOKEN"</span>
+</code></pre>
+
+<blockquote>
+<p>The above command returns XML structured like this:</p>
+</blockquote>
+<pre><code class="highlight xml"><span class="nt">&lt;hash&gt;</span>
+  <span class="nt">&lt;response&gt;</span>
+    <span class="nt">&lt;status</span> <span class="na">type=</span><span class="s">"integer"</span><span class="nt">&gt;</span>200<span class="nt">&lt;/status&gt;</span>
+  <span class="nt">&lt;/response&gt;</span>
+  <span class="nt">&lt;results</span> <span class="na">type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;result&gt;</span>
+      <span class="nt">&lt;url&gt;</span>
+      http://www.walmart.com/ip/Google-Chromecast-HDMI-Streaming-Media-Player/33142918
+      <span class="nt">&lt;/url&gt;</span>
+      <span class="nt">&lt;date&gt;</span>2015-02-25<span class="nt">&lt;/date&gt;</span>
+      <span class="nt">&lt;open-graph</span> <span class="na">type=</span><span class="s">"boolean"</span><span class="nt">&gt;</span>true<span class="nt">&lt;/open-graph&gt;</span>
+      <span class="nt">&lt;type&gt;</span>Offer<span class="nt">&lt;/type&gt;</span>
+      <span class="nt">&lt;id&gt;</span>811571013579<span class="nt">&lt;/id&gt;</span>
+      <span class="nt">&lt;image&gt;</span>
+      http://i5.walmartimages.com/dfw/dce07b8c-cc82/k2-_6f892d53-39df-4687-adae-fd16b2656547.v4.jpg
+      <span class="nt">&lt;/image&gt;</span>
+      <span class="nt">&lt;site-name&gt;</span>Walmart.com<span class="nt">&lt;/site-name&gt;</span>
+      <span class="nt">&lt;schema-org</span> <span class="na">type=</span><span class="s">"boolean"</span><span class="nt">&gt;</span>true<span class="nt">&lt;/schema-org&gt;</span>
+      <span class="nt">&lt;tags</span> <span class="na">type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;tag&gt;</span>Google<span class="nt">&lt;/tag&gt;</span>
+        <span class="nt">&lt;tag&gt;</span>Chromecast<span class="nt">&lt;/tag&gt;</span>
+        <span class="nt">&lt;tag&gt;</span>HDMI<span class="nt">&lt;/tag&gt;</span>
+        <span class="nt">&lt;tag&gt;</span>Streaming<span class="nt">&lt;/tag&gt;</span>
+        <span class="nt">&lt;tag&gt;</span>Media<span class="nt">&lt;/tag&gt;</span>
+        <span class="nt">&lt;tag&gt;</span>Player<span class="nt">&lt;/tag&gt;</span>
+        <span class="nt">&lt;tag&gt;</span>Wal-mart<span class="nt">&lt;/tag&gt;</span>
+        <span class="nt">&lt;tag&gt;</span>Walmart.com<span class="nt">&lt;/tag&gt;</span>
+      <span class="nt">&lt;/tags&gt;</span>
+      <span class="nt">&lt;name&gt;</span>Google Chromecast HDMI Streaming Media Player<span class="nt">&lt;/name&gt;</span>
+      <span class="nt">&lt;productID&gt;</span>811571013579<span class="nt">&lt;/productID&gt;</span>
+      <span class="nt">&lt;screenshot&gt;</span>811571013579/2015-02-23.jpg<span class="nt">&lt;/screenshot&gt;</span>
+      <span class="nt">&lt;price&gt;</span>30.07<span class="nt">&lt;/price&gt;</span>
+      <span class="nt">&lt;priceCurrency&gt;</span>USD<span class="nt">&lt;/priceCurrency&gt;</span>
+      <span class="nt">&lt;availability&gt;</span>InStock<span class="nt">&lt;/availability&gt;</span>
+      <span class="nt">&lt;title&gt;</span>Media Streaming Players<span class="nt">&lt;/title&gt;</span>
+      <span class="nt">&lt;sku&gt;</span>811571013579<span class="nt">&lt;/sku&gt;</span>
+      <span class="nt">&lt;mpn&gt;</span>86002596-01<span class="nt">&lt;/mpn&gt;</span>
+      <span class="nt">&lt;brand&gt;</span>Google<span class="nt">&lt;/brand&gt;</span>
+      <span class="nt">&lt;model&gt;</span>86002596-01<span class="nt">&lt;/model&gt;</span>
+      <span class="nt">&lt;facebook-shares</span> <span class="na">type=</span><span class="s">"integer"</span><span class="nt">&gt;</span>42<span class="nt">&lt;/facebook-shares&gt;</span>
+      <span class="nt">&lt;google-shares</span> <span class="na">type=</span><span class="s">"integer"</span><span class="nt">&gt;</span>47<span class="nt">&lt;/google-shares&gt;</span>
+      <span class="nt">&lt;twitter-shares</span> <span class="na">type=</span><span class="s">"integer"</span><span class="nt">&gt;</span>12<span class="nt">&lt;/twitter-shares&gt;</span>
+      <span class="nt">&lt;pinterest-shares</span> <span class="na">type=</span><span class="s">"integer"</span><span class="nt">&gt;</span>10<span class="nt">&lt;/pinterest-shares&gt;</span>
+      <span class="nt">&lt;stumbleupon-shares</span> <span class="na">type=</span><span class="s">"integer"</span><span class="nt">&gt;</span>1<span class="nt">&lt;/stumbleupon-shares&gt;</span>
+      <span class="nt">&lt;total-shares</span> <span class="na">type=</span><span class="s">"integer"</span><span class="nt">&gt;</span>112<span class="nt">&lt;/total-shares&gt;</span>
+      <span class="nt">&lt;container&gt;</span>walmart-offers<span class="nt">&lt;/container&gt;</span>
+    <span class="nt">&lt;/result&gt;</span>
+  <span class="nt">&lt;/results&gt;</span>
+<span class="nt">&lt;/hash&gt;</span>
+</code></pre>
+
+<p>Match Products in a container based on a specific set of known parameters and values.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET http://api.pricels.com/v1/:CONTAINER/match.xml</code></p>
+
+<h3 id="query-parameters">Query Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>access_token</td>
+<td>true</td>
+<td>Access token used to authenticate</td>
+</tr>
+<tr>
+<td>:CONTAINER</td>
+<td>true</td>
+<td>The available container you are searching in</td>
+</tr>
+<tr>
+<td>:QUERY</td>
+<td>true</td>
+<td>What you are searching for</td>
+</tr>
+<tr>
+<td>results</td>
+<td>false</td>
+<td>Number of Results you want back (default: 1)</td>
+</tr>
+<tr>
+<td>fetch</td>
+<td>false</td>
+<td>Automatically crawl new data (default: true)</td>
+</tr>
+<tr>
+<td>social</td>
+<td>false</td>
+<td>Automatically fetch new social data (default: false)</td>
+</tr>
+<tr>
+<td>url</td>
+<td>false</td>
+<td>Unique URL for product</td>
+</tr>
+<tr>
+<td>date</td>
+<td>false</td>
+<td>When data was last gathered</td>
+</tr>
+<tr>
+<td>id</td>
+<td>false</td>
+<td>Unique ID for product</td>
+</tr>
+<tr>
+<td>tags</td>
+<td>false</td>
+<td>Tags associated with product</td>
+</tr>
+<tr>
+<td>name</td>
+<td>false</td>
+<td>Unique name of product</td>
+</tr>
+<tr>
+<td>description</td>
+<td>false</td>
+<td>Given description for product</td>
+</tr>
+<tr>
+<td>type</td>
+<td>false</td>
+<td>Product Type</td>
+</tr>
+<tr>
+<td>image</td>
+<td>false</td>
+<td>Unique product image</td>
+</tr>
+<tr>
+<td>sku</td>
+<td>false</td>
+<td>Unique product sku</td>
+</tr>
+<tr>
+<td>mpn</td>
+<td>false</td>
+<td>Unique product manufacturer part number</td>
+</tr>
+<tr>
+<td>model</td>
+<td>false</td>
+<td>Unique product model number</td>
+</tr>
+<tr>
+<td>price</td>
+<td>false</td>
+<td>Price of product at time of sale</td>
+</tr>
+<tr>
+<td>original_price</td>
+<td>false</td>
+<td>Original retail price of the product</td>
+</tr>
+<tr>
+<td>facebook_shares</td>
+<td>false</td>
+<td>Number of times product has been shared on Facebook</td>
+</tr>
+<tr>
+<td>google_shares</td>
+<td>false</td>
+<td>Number of times product has been shared on Google Plus</td>
+</tr>
+<tr>
+<td>twitter_shares</td>
+<td>false</td>
+<td>Number of times product has been shared on Twitter</td>
+</tr>
+<tr>
+<td>reddit_shares</td>
+<td>false</td>
+<td>Number of times product has been shared on Reddit</td>
+</tr>
+<tr>
+<td>linkedin_shares</td>
+<td>false</td>
+<td>Number of times product has been shared on LinkedIn</td>
+</tr>
+<tr>
+<td>pinterest_shares</td>
+<td>false</td>
+<td>Number of times product has been shared on Pinterest</td>
+</tr>
+<tr>
+<td>stumbleupon_shares</td>
+<td>false</td>
+<td>Number of times product has been shared on StumbleUpon</td>
+</tr>
+<tr>
+<td>total_shares</td>
+<td>false</td>
+<td>Number of times product has been shared on Social Media</td>
+</tr>
+</tbody></table>
+
+<aside class="notice">
+You must replace `:CONTAINER` with the available container you are matching against.
 </aside>
 
 <h2 id="get-product-in-json">Get Product in JSON</h2>
@@ -1162,6 +1604,392 @@ You must replace `:QUERY` with what you are searching for.
 <aside class="notice">
 You must replace `:QUERY` with what you are searching for.
 </aside>
+
+<h2 id="match-all-products-in-json">Match All Products in JSON</h2>
+
+<blockquote>
+<p>Request example</p>
+</blockquote>
+<pre><code class="highlight shell">curl <span class="s2">"http://api.pricels.com/v1/match?name=chromecast"</span>
+  -H <span class="s2">"Authorization: Token token=YOUR-ACCESS-TOKEN"</span>
+</code></pre>
+
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre><code class="highlight json"><span class="p">{</span><span class="w">
+  </span><span class="s2">"response"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"results"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"B00DR0PDNE"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Google Chromecast HDMI Streaming Media Player"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"container"</span><span class="p">:</span><span class="w"> </span><span class="s2">"amazon-offers"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"811571013579"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Google Chromecast HDMI Streaming Media Player"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"container"</span><span class="p">:</span><span class="w"> </span><span class="s2">"walmart-offers"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Google Chromecast HDMI Streaming Media Player"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"15460778"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"container"</span><span class="p">:</span><span class="w"> </span><span class="s2">"target-offers"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"945132"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Google Chromecast HDMI Streaming Media Player with $10 Google Play Credit"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"container"</span><span class="p">:</span><span class="w"> </span><span class="s2">"costco-offers"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<p>Match all Products based on a specific set of known parameters and values.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET http://api.pricels.com/v1/match</code></p>
+
+<h3 id="query-parameters">Query Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>access_token</td>
+<td>true</td>
+<td>Access token used to authenticate</td>
+</tr>
+<tr>
+<td>:CONTAINER</td>
+<td>true</td>
+<td>The available container you are searching in</td>
+</tr>
+<tr>
+<td>:QUERY</td>
+<td>true</td>
+<td>What you are searching for</td>
+</tr>
+<tr>
+<td>results</td>
+<td>false</td>
+<td>Number of Results you want back (default: 10)</td>
+</tr>
+<tr>
+<td>fetch</td>
+<td>false</td>
+<td>Automatically crawl new data (default: true)</td>
+</tr>
+<tr>
+<td>social</td>
+<td>false</td>
+<td>Automatically fetch new social data (default: false)</td>
+</tr>
+<tr>
+<td>url</td>
+<td>false</td>
+<td>Unique URL for product</td>
+</tr>
+<tr>
+<td>date</td>
+<td>false</td>
+<td>When data was last gathered</td>
+</tr>
+<tr>
+<td>id</td>
+<td>false</td>
+<td>Unique ID for product</td>
+</tr>
+<tr>
+<td>tags</td>
+<td>false</td>
+<td>Tags associated with product</td>
+</tr>
+<tr>
+<td>name</td>
+<td>false</td>
+<td>Unique name of product</td>
+</tr>
+<tr>
+<td>description</td>
+<td>false</td>
+<td>Given description for product</td>
+</tr>
+<tr>
+<td>type</td>
+<td>false</td>
+<td>Product Type</td>
+</tr>
+<tr>
+<td>image</td>
+<td>false</td>
+<td>Unique product image</td>
+</tr>
+<tr>
+<td>sku</td>
+<td>false</td>
+<td>Unique product sku</td>
+</tr>
+<tr>
+<td>mpn</td>
+<td>false</td>
+<td>Unique product manufacturer part number</td>
+</tr>
+<tr>
+<td>model</td>
+<td>false</td>
+<td>Unique product model number</td>
+</tr>
+<tr>
+<td>price</td>
+<td>false</td>
+<td>Price of product at time of sale</td>
+</tr>
+<tr>
+<td>original_price</td>
+<td>false</td>
+<td>Original retail price of the product</td>
+</tr>
+<tr>
+<td>facebook_shares</td>
+<td>false</td>
+<td>Number of times product has been shared on Facebook</td>
+</tr>
+<tr>
+<td>google_shares</td>
+<td>false</td>
+<td>Number of times product has been shared on Google Plus</td>
+</tr>
+<tr>
+<td>twitter_shares</td>
+<td>false</td>
+<td>Number of times product has been shared on Twitter</td>
+</tr>
+<tr>
+<td>reddit_shares</td>
+<td>false</td>
+<td>Number of times product has been shared on Reddit</td>
+</tr>
+<tr>
+<td>linkedin_shares</td>
+<td>false</td>
+<td>Number of times product has been shared on LinkedIn</td>
+</tr>
+<tr>
+<td>pinterest_shares</td>
+<td>false</td>
+<td>Number of times product has been shared on Pinterest</td>
+</tr>
+<tr>
+<td>stumbleupon_shares</td>
+<td>false</td>
+<td>Number of times product has been shared on StumbleUpon</td>
+</tr>
+<tr>
+<td>total_shares</td>
+<td>false</td>
+<td>Number of times product has been shared on Social Media</td>
+</tr>
+</tbody></table>
+
+<h2 id="match-all-products-in-xml">Match All Products in XML</h2>
+
+<blockquote>
+<p>Request example</p>
+</blockquote>
+<pre><code class="highlight shell">curl <span class="s2">"http://api.pricels.com/v1/match.xml?name=chromecast"</span>
+  -H <span class="s2">"Authorization: Token token=YOUR-ACCESS-TOKEN"</span>
+</code></pre>
+
+<blockquote>
+<p>The above command returns XML structured like this:</p>
+</blockquote>
+<pre><code class="highlight xml"><span class="nt">&lt;hash&gt;</span>
+  <span class="nt">&lt;response&gt;</span>
+    <span class="nt">&lt;status</span> <span class="na">type=</span><span class="s">"integer"</span><span class="nt">&gt;</span>200<span class="nt">&lt;/status&gt;</span>
+  <span class="nt">&lt;/response&gt;</span>
+  <span class="nt">&lt;results</span> <span class="na">type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;result&gt;</span>
+      <span class="nt">&lt;id&gt;</span>B00DR0PDNE<span class="nt">&lt;/id&gt;</span>
+      <span class="nt">&lt;name&gt;</span>Google Chromecast HDMI Streaming Media Player<span class="nt">&lt;/name&gt;</span>
+      <span class="nt">&lt;container&gt;</span>amazon-offers<span class="nt">&lt;/container&gt;</span>
+    <span class="nt">&lt;/result&gt;</span>
+    <span class="nt">&lt;result&gt;</span>
+      <span class="nt">&lt;id&gt;</span>811571013579<span class="nt">&lt;/id&gt;</span>
+      <span class="nt">&lt;name&gt;</span>Google Chromecast HDMI Streaming Media Player<span class="nt">&lt;/name&gt;</span>
+      <span class="nt">&lt;container&gt;</span>walmart-offers<span class="nt">&lt;/container&gt;</span>
+    <span class="nt">&lt;/result&gt;</span>
+    <span class="nt">&lt;result&gt;</span>
+      <span class="nt">&lt;name&gt;</span>Google Chromecast HDMI Streaming Media Player<span class="nt">&lt;/name&gt;</span>
+      <span class="nt">&lt;id&gt;</span>15460778<span class="nt">&lt;/id&gt;</span>
+      <span class="nt">&lt;container&gt;</span>target-offers<span class="nt">&lt;/container&gt;</span>
+    <span class="nt">&lt;/result&gt;</span>
+    <span class="nt">&lt;result&gt;</span>
+      <span class="nt">&lt;id&gt;</span>945132<span class="nt">&lt;/id&gt;</span>
+      <span class="nt">&lt;name&gt;</span>Google Chromecast HDMI Streaming Media Player with $10 Google Play Credit<span class="nt">&lt;/name&gt;</span>
+      <span class="nt">&lt;container&gt;</span>costco-offers<span class="nt">&lt;/container&gt;</span>
+    <span class="nt">&lt;/result&gt;</span>
+  <span class="nt">&lt;/results&gt;</span>
+<span class="nt">&lt;/hash&gt;</span>
+</code></pre>
+
+<p>Match all Products based on a specific set of known parameters and values.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET http://api.pricels.com/v1/match.xml</code></p>
+
+<h3 id="query-parameters">Query Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>access_token</td>
+<td>true</td>
+<td>Access token used to authenticate</td>
+</tr>
+<tr>
+<td>:CONTAINER</td>
+<td>true</td>
+<td>The available container you are searching in</td>
+</tr>
+<tr>
+<td>:QUERY</td>
+<td>true</td>
+<td>What you are searching for</td>
+</tr>
+<tr>
+<td>results</td>
+<td>false</td>
+<td>Number of Results you want back (default: 10)</td>
+</tr>
+<tr>
+<td>fetch</td>
+<td>false</td>
+<td>Automatically crawl new data (default: true)</td>
+</tr>
+<tr>
+<td>social</td>
+<td>false</td>
+<td>Automatically fetch new social data (default: false)</td>
+</tr>
+<tr>
+<td>url</td>
+<td>false</td>
+<td>Unique URL for product</td>
+</tr>
+<tr>
+<td>date</td>
+<td>false</td>
+<td>When data was last gathered</td>
+</tr>
+<tr>
+<td>id</td>
+<td>false</td>
+<td>Unique ID for product</td>
+</tr>
+<tr>
+<td>tags</td>
+<td>false</td>
+<td>Tags associated with product</td>
+</tr>
+<tr>
+<td>name</td>
+<td>false</td>
+<td>Unique name of product</td>
+</tr>
+<tr>
+<td>description</td>
+<td>false</td>
+<td>Given description for product</td>
+</tr>
+<tr>
+<td>type</td>
+<td>false</td>
+<td>Product Type</td>
+</tr>
+<tr>
+<td>image</td>
+<td>false</td>
+<td>Unique product image</td>
+</tr>
+<tr>
+<td>sku</td>
+<td>false</td>
+<td>Unique product sku</td>
+</tr>
+<tr>
+<td>mpn</td>
+<td>false</td>
+<td>Unique product manufacturer part number</td>
+</tr>
+<tr>
+<td>model</td>
+<td>false</td>
+<td>Unique product model number</td>
+</tr>
+<tr>
+<td>price</td>
+<td>false</td>
+<td>Price of product at time of sale</td>
+</tr>
+<tr>
+<td>original_price</td>
+<td>false</td>
+<td>Original retail price of the product</td>
+</tr>
+<tr>
+<td>facebook_shares</td>
+<td>false</td>
+<td>Number of times product has been shared on Facebook</td>
+</tr>
+<tr>
+<td>google_shares</td>
+<td>false</td>
+<td>Number of times product has been shared on Google Plus</td>
+</tr>
+<tr>
+<td>twitter_shares</td>
+<td>false</td>
+<td>Number of times product has been shared on Twitter</td>
+</tr>
+<tr>
+<td>reddit_shares</td>
+<td>false</td>
+<td>Number of times product has been shared on Reddit</td>
+</tr>
+<tr>
+<td>linkedin_shares</td>
+<td>false</td>
+<td>Number of times product has been shared on LinkedIn</td>
+</tr>
+<tr>
+<td>pinterest_shares</td>
+<td>false</td>
+<td>Number of times product has been shared on Pinterest</td>
+</tr>
+<tr>
+<td>stumbleupon_shares</td>
+<td>false</td>
+<td>Number of times product has been shared on StumbleUpon</td>
+</tr>
+<tr>
+<td>total_shares</td>
+<td>false</td>
+<td>Number of times product has been shared on Social Media</td>
+</tr>
+</tbody></table>
 
           <h1 id="changelog">Changelog</h1>
 
