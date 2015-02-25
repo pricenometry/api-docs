@@ -434,7 +434,7 @@ You must replace `YOUR-ACCESS-TOKEN` with your API key.
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 
-<p>Search products based on a query or key word.</p>
+<p>Search Products based on a query or key word.</p>
 
 <h3 id="http-request">HTTP Request</h3>
 
@@ -463,6 +463,16 @@ You must replace `YOUR-ACCESS-TOKEN` with your API key.
 <td>:QUERY</td>
 <td>true</td>
 <td>What you are searching for</td>
+</tr>
+<tr>
+<td>fetch</td>
+<td>false</td>
+<td>Automatically crawl new data (default: true)</td>
+</tr>
+<tr>
+<td>social</td>
+<td>false</td>
+<td>Automatically fetch new social data (default: false)</td>
 </tr>
 </tbody></table>
 
@@ -496,7 +506,7 @@ You must replace `:CONTAINER` with the available container you are searching in 
 <span class="nt">&lt;/hash&gt;</span>
 </code></pre>
 
-<p>Search products based on a query or key word.</p>
+<p>Search Products based on a query or key word.</p>
 
 <h3 id="http-request">HTTP Request</h3>
 
@@ -526,10 +536,487 @@ You must replace `:CONTAINER` with the available container you are searching in 
 <td>true</td>
 <td>What you are searching for</td>
 </tr>
+<tr>
+<td>fetch</td>
+<td>false</td>
+<td>Automatically crawl new data (default: true)</td>
+</tr>
+<tr>
+<td>social</td>
+<td>false</td>
+<td>Automatically fetch new social data (default: false)</td>
+</tr>
 </tbody></table>
 
 <aside class="notice">
 You must replace `:CONTAINER` with the available container you are searching in and `:QUERY` with what you are searching for.
+</aside>
+
+<h2 id="get-product-in-json">Get Product in JSON</h2>
+
+<blockquote>
+<p>Request example</p>
+</blockquote>
+<pre><code class="highlight shell">curl <span class="s2">"http://api.pricels.com/v1/amazon-offers/B00DR0PDNE"</span>
+  -H <span class="s2">"Authorization: Token token=YOUR-ACCESS-TOKEN"</span>
+</code></pre>
+
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre><code class="highlight json"><span class="p">{</span><span class="w">
+  </span><span class="s2">"response"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://www.amazon.com/Google-Chromecast-Streaming-Media-Player/dp/B00DR0PDNE"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-02-24"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"B00DR0PDNE"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"tags"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="s2">"Google"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"Chromecast"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"HDMI"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"Streaming"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"Media"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"Player"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"Inc."</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"H2G2-42"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"86002596-01"</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Google Chromecast HDMI Streaming Media Player"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Amazon.com: Google Chromecast HDMI Streaming Media Player: Electronics"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Offer"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"image"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://ecx.images-amazon.com/images/I/811nvG%2BLgML._SL1500_.jpg"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"B00DR0PDNE"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"screenshot"</span><span class="p">:</span><span class="w"> </span><span class="s2">"B00DR0PDNE/2015-02-24.jpg"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"30.07"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"original_price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"35.00"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"facebook_shares"</span><span class="p">:</span><span class="w"> </span><span class="mi">48466</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"google_shares"</span><span class="p">:</span><span class="w"> </span><span class="mi">5776</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"twitter_shares"</span><span class="p">:</span><span class="w"> </span><span class="mi">177</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"reddit_shares"</span><span class="p">:</span><span class="w"> </span><span class="mi">149</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"linkedin_shares"</span><span class="p">:</span><span class="w"> </span><span class="mi">364</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"pinterest_shares"</span><span class="p">:</span><span class="w"> </span><span class="mi">106</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"stumbleupon_shares"</span><span class="p">:</span><span class="w"> </span><span class="mi">23</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"total_shares"</span><span class="p">:</span><span class="w"> </span><span class="mi">55061</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<p>Get most up to date Product information by Product id.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET http://api.pricels.com/v1/:CONTAINER/:ID</code></p>
+
+<h3 id="query-parameters">Query Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>access_token</td>
+<td>true</td>
+<td>Access token used to authenticate</td>
+</tr>
+<tr>
+<td>:CONTAINER</td>
+<td>true</td>
+<td>The available container</td>
+</tr>
+<tr>
+<td>:ID</td>
+<td>true</td>
+<td>Product ID</td>
+</tr>
+<tr>
+<td>fetch</td>
+<td>false</td>
+<td>Automatically crawl new data (default: true)</td>
+</tr>
+<tr>
+<td>social</td>
+<td>false</td>
+<td>Automatically fetch new social data (default: false)</td>
+</tr>
+</tbody></table>
+
+<aside class="notice">
+You must replace `:CONTAINER` with the available container and `:ID` with the Product ID.
+</aside>
+
+<h2 id="get-product-in-xml">Get Product in XML</h2>
+
+<blockquote>
+<p>Request example</p>
+</blockquote>
+<pre><code class="highlight shell">curl <span class="s2">"http://api.pricels.com/v1/amazon-offers/B00DR0PDNE.xml"</span>
+  -H <span class="s2">"Authorization: Token token=YOUR-ACCESS-TOKEN"</span>
+</code></pre>
+
+<blockquote>
+<p>The above command returns XML structured like this:</p>
+</blockquote>
+<pre><code class="highlight xml"><span class="nt">&lt;hash&gt;</span>
+  <span class="nt">&lt;response&gt;</span>
+    <span class="nt">&lt;status</span> <span class="na">type=</span><span class="s">"integer"</span><span class="nt">&gt;</span>200<span class="nt">&lt;/status&gt;</span>
+  <span class="nt">&lt;/response&gt;</span>
+  <span class="nt">&lt;url&gt;</span>
+  http://www.amazon.com/Google-Chromecast-Streaming-Media-Player/dp/B00DR0PDNE
+  <span class="nt">&lt;/url&gt;</span>
+  <span class="nt">&lt;date&gt;</span>2015-02-24<span class="nt">&lt;/date&gt;</span>
+  <span class="nt">&lt;id&gt;</span>B00DR0PDNE<span class="nt">&lt;/id&gt;</span>
+  <span class="nt">&lt;tags</span> <span class="na">type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;tag&gt;</span>Google<span class="nt">&lt;/tag&gt;</span>
+    <span class="nt">&lt;tag&gt;</span>Chromecast<span class="nt">&lt;/tag&gt;</span>
+    <span class="nt">&lt;tag&gt;</span>HDMI<span class="nt">&lt;/tag&gt;</span>
+    <span class="nt">&lt;tag&gt;</span>Streaming<span class="nt">&lt;/tag&gt;</span>
+    <span class="nt">&lt;tag&gt;</span>Media<span class="nt">&lt;/tag&gt;</span>
+    <span class="nt">&lt;tag&gt;</span>Player<span class="nt">&lt;/tag&gt;</span>
+    <span class="nt">&lt;tag&gt;</span>Inc.<span class="nt">&lt;/tag&gt;</span>
+    <span class="nt">&lt;tag&gt;</span>H2G2-42<span class="nt">&lt;/tag&gt;</span>
+    <span class="nt">&lt;tag&gt;</span>86002596-01<span class="nt">&lt;/tag&gt;</span>
+  <span class="nt">&lt;/tags&gt;</span>
+  <span class="nt">&lt;name&gt;</span>Google Chromecast HDMI Streaming Media Player<span class="nt">&lt;/name&gt;</span>
+  <span class="nt">&lt;description&gt;</span>
+  Amazon.com: Google Chromecast HDMI Streaming Media Player: Electronics
+  <span class="nt">&lt;/description&gt;</span>
+  <span class="nt">&lt;type&gt;</span>Offer<span class="nt">&lt;/type&gt;</span>
+  <span class="nt">&lt;image&gt;</span>
+  http://ecx.images-amazon.com/images/I/811nvG%2BLgML._SL1500_.jpg
+  <span class="nt">&lt;/image&gt;</span>
+  <span class="nt">&lt;sku&gt;</span>B00DR0PDNE<span class="nt">&lt;/sku&gt;</span>
+  <span class="nt">&lt;screenshot&gt;</span>B00DR0PDNE/2015-02-24.jpg<span class="nt">&lt;/screenshot&gt;</span>
+  <span class="nt">&lt;price&gt;</span>30.07<span class="nt">&lt;/price&gt;</span>
+  <span class="nt">&lt;original-price&gt;</span>35.00<span class="nt">&lt;/original-price&gt;</span>
+  <span class="nt">&lt;facebook-shares</span> <span class="na">type=</span><span class="s">"integer"</span><span class="nt">&gt;</span>48466<span class="nt">&lt;/facebook-shares&gt;</span>
+  <span class="nt">&lt;google-shares</span> <span class="na">type=</span><span class="s">"integer"</span><span class="nt">&gt;</span>5776<span class="nt">&lt;/google-shares&gt;</span>
+  <span class="nt">&lt;twitter-shares</span> <span class="na">type=</span><span class="s">"integer"</span><span class="nt">&gt;</span>177<span class="nt">&lt;/twitter-shares&gt;</span>
+  <span class="nt">&lt;reddit-shares</span> <span class="na">type=</span><span class="s">"integer"</span><span class="nt">&gt;</span>149<span class="nt">&lt;/reddit-shares&gt;</span>
+  <span class="nt">&lt;linkedin-shares</span> <span class="na">type=</span><span class="s">"integer"</span><span class="nt">&gt;</span>364<span class="nt">&lt;/linkedin-shares&gt;</span>
+  <span class="nt">&lt;pinterest-shares</span> <span class="na">type=</span><span class="s">"integer"</span><span class="nt">&gt;</span>106<span class="nt">&lt;/pinterest-shares&gt;</span>
+  <span class="nt">&lt;stumbleupon-shares</span> <span class="na">type=</span><span class="s">"integer"</span><span class="nt">&gt;</span>23<span class="nt">&lt;/stumbleupon-shares&gt;</span>
+  <span class="nt">&lt;total-shares</span> <span class="na">type=</span><span class="s">"integer"</span><span class="nt">&gt;</span>55061<span class="nt">&lt;/total-shares&gt;</span>
+<span class="nt">&lt;/hash&gt;</span>
+</code></pre>
+
+<p>Get most up to date Product information by Product id.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET http://api.pricels.com/v1/:CONTAINER/:ID.xml</code></p>
+
+<h3 id="query-parameters">Query Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>access_token</td>
+<td>true</td>
+<td>Access token used to authenticate</td>
+</tr>
+<tr>
+<td>:CONTAINER</td>
+<td>true</td>
+<td>The available container</td>
+</tr>
+<tr>
+<td>:ID</td>
+<td>true</td>
+<td>Product ID</td>
+</tr>
+<tr>
+<td>fetch</td>
+<td>false</td>
+<td>Automatically crawl new data (default: true)</td>
+</tr>
+<tr>
+<td>social</td>
+<td>false</td>
+<td>Automatically fetch new social data (default: false)</td>
+</tr>
+</tbody></table>
+
+<aside class="notice">
+You must replace `:CONTAINER` with the available container and `:ID` with the Product ID.
+</aside>
+
+<h2 id="get-product-history-in-json">Get Product History in JSON</h2>
+
+<blockquote>
+<p>Request example</p>
+</blockquote>
+<pre><code class="highlight shell">curl <span class="s2">"http://api.pricels.com/v1/amazon-offers/B00DR0PDNE/history"</span>
+  -H <span class="s2">"Authorization: Token token=YOUR-ACCESS-TOKEN"</span>
+</code></pre>
+
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre><code class="highlight json"><span class="p">{</span><span class="w">
+  </span><span class="s2">"response"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"B00DR0PDNE"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Google Chromecast HDMI Streaming Media Player"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"sku"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"2015-02-09"</span><span class="p">:</span><span class="w"> </span><span class="s2">"B00DR0PDNE"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"screenshot"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"2015-02-09"</span><span class="p">:</span><span class="w"> </span><span class="s2">"B00DR0PDNE/2015-02-09.jpg"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"2015-02-10"</span><span class="p">:</span><span class="w"> </span><span class="s2">"B00DR0PDNE/2015-02-10.jpg"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"2015-02-21"</span><span class="p">:</span><span class="w"> </span><span class="s2">"B00DR0PDNE/2015-02-21.jpg"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"2015-02-24"</span><span class="p">:</span><span class="w"> </span><span class="s2">"B00DR0PDNE/2015-02-24.jpg"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"2015-02-09"</span><span class="p">:</span><span class="w"> </span><span class="s2">"32.49"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"2015-02-10"</span><span class="p">:</span><span class="w"> </span><span class="s2">"31.78"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"2015-02-21"</span><span class="p">:</span><span class="w"> </span><span class="s2">"30.07"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"original_price"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"2015-02-09"</span><span class="p">:</span><span class="w"> </span><span class="s2">"35.00"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<p>Get most up to date Product history by Product id.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET http://api.pricels.com/v1/:CONTAINER/:ID/history</code></p>
+
+<h3 id="query-parameters">Query Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>access_token</td>
+<td>true</td>
+<td>Access token used to authenticate</td>
+</tr>
+<tr>
+<td>:CONTAINER</td>
+<td>true</td>
+<td>The available container</td>
+</tr>
+<tr>
+<td>:ID</td>
+<td>true</td>
+<td>Product ID</td>
+</tr>
+<tr>
+<td>fetch</td>
+<td>false</td>
+<td>Automatically crawl new data (default: true)</td>
+</tr>
+<tr>
+<td>social</td>
+<td>false</td>
+<td>Automatically fetch new social data (default: false)</td>
+</tr>
+</tbody></table>
+
+<aside class="notice">
+You must replace `:CONTAINER` with the available container and `:ID` with the Product ID.
+</aside>
+
+<h2 id="get-product-screenshot-image">Get Product Screenshot Image</h2>
+
+<blockquote>
+<p>Request example</p>
+</blockquote>
+<pre><code class="highlight shell">curl <span class="s2">"http://api.pricels.com/v1/amazon-offers/B00DR0PDNE/2015-02-24.jpg"</span>
+  -H <span class="s2">"Authorization: Token token=YOUR-ACCESS-TOKEN"</span>
+</code></pre>
+
+<blockquote>
+<p>The above command redirects to a URL like the one below:</p>
+</blockquote>
+<pre><code class="highlight html">  <span class="nt">&lt;html&gt;</span>
+    <span class="nt">&lt;body&gt;</span>
+    You are being
+    <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"https://amazon-screenshots.pricels.com/B00DR0PDNE/2015-02-24.jpg?AWSAccessKeyId=AUTO-GENERATED&amp;Signature=AUTO-GENERATED&amp;Expires=24-HOURS"</span><span class="nt">&gt;</span>redirected<span class="nt">&lt;/a&gt;</span>.
+    <span class="nt">&lt;/body&gt;</span>
+  <span class="nt">&lt;/html&gt;</span>
+</code></pre>
+
+<p>Get Product redirect to screenshot image.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET http://api.pricels.com/v1/:CONTAINER/:ID/:SCREENSHOT_DATE.jpg</code></p>
+
+<h3 id="query-parameters">Query Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>access_token</td>
+<td>true</td>
+<td>Access token used to authenticate</td>
+</tr>
+<tr>
+<td>:CONTAINER</td>
+<td>true</td>
+<td>The available container</td>
+</tr>
+<tr>
+<td>:ID</td>
+<td>true</td>
+<td>Product ID</td>
+</tr>
+<tr>
+<td>:SCREENSHOT_DATE</td>
+<td>true</td>
+<td>Date screenshot was captured</td>
+</tr>
+</tbody></table>
+
+<aside class="notice">
+You must replace `:CONTAINER` with the available container, `:ID` with the Product ID and `:SCREENSHOT_DATE` with date screenshot was taken.
+</aside>
+
+<h2 id="get-product-screenshot-in-json">Get Product Screenshot in JSON</h2>
+
+<blockquote>
+<p>Request example</p>
+</blockquote>
+<pre><code class="highlight shell">curl <span class="s2">"http://api.pricels.com/v1/amazon-offers/B00DR0PDNE/2015-02-24"</span>
+  -H <span class="s2">"Authorization: Token token=YOUR-ACCESS-TOKEN"</span>
+</code></pre>
+
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre><code class="highlight json"><span class="p">{</span><span class="w">
+  </span><span class="s2">"response"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"B00DR0PDNE"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"redirect_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://amazon-screenshots.pricels.com/B00DR0PDNE/2015-02-24.jpg?AWSAccessKeyId=AUTO-GENERATED&amp;Signature=AUTO-GENERATED&amp;Expires=24-HOURS"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<p>Get Product screenshot in JSON form.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET http://api.pricels.com/v1/:CONTAINER/:ID/:SCREENSHOT_DATE</code></p>
+
+<h3 id="query-parameters">Query Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>access_token</td>
+<td>true</td>
+<td>Access token used to authenticate</td>
+</tr>
+<tr>
+<td>:CONTAINER</td>
+<td>true</td>
+<td>The available container</td>
+</tr>
+<tr>
+<td>:ID</td>
+<td>true</td>
+<td>Product ID</td>
+</tr>
+<tr>
+<td>:SCREENSHOT_DATE</td>
+<td>true</td>
+<td>Date screenshot was captured</td>
+</tr>
+</tbody></table>
+
+<aside class="notice">
+You must replace `:CONTAINER` with the available container, `:ID` with the Product ID and `:SCREENSHOT_DATE` with date screenshot was taken.
+</aside>
+
+<h2 id="get-product-screenshot-in-xml">Get Product Screenshot in XML</h2>
+
+<blockquote>
+<p>Request example</p>
+</blockquote>
+<pre><code class="highlight shell">curl <span class="s2">"http://api.pricels.com/v1/amazon-offers/B00DR0PDNE/2015-02-24.xml"</span>
+  -H <span class="s2">"Authorization: Token token=YOUR-ACCESS-TOKEN"</span>
+</code></pre>
+
+<blockquote>
+<p>The above command returns XML structured like this:</p>
+</blockquote>
+<pre><code class="highlight xml"><span class="nt">&lt;hash&gt;</span>
+  <span class="nt">&lt;response&gt;</span>
+    <span class="nt">&lt;status</span> <span class="na">type=</span><span class="s">"integer"</span><span class="nt">&gt;</span>200<span class="nt">&lt;/status&gt;</span>
+  <span class="nt">&lt;/response&gt;</span>
+  <span class="nt">&lt;id&gt;</span>B00DR0PDNE<span class="nt">&lt;/id&gt;</span>
+  <span class="nt">&lt;redirect-url&gt;</span>
+  https://amazon-screenshots.pricels.com/B00DR0PDNE/2015-02-24.jpg?AWSAccessKeyId=AUTO-GENERATED<span class="err">&amp;</span>Signature=AUTO-GENERATED<span class="err">&amp;</span>Expires=24-HOURS
+  <span class="nt">&lt;/redirect-url&gt;</span>
+<span class="nt">&lt;/hash&gt;</span>
+</code></pre>
+
+<p>Get Product screenshot in XML form.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET http://api.pricels.com/v1/:CONTAINER/:ID/:SCREENSHOT_DATE.xml</code></p>
+
+<h3 id="query-parameters">Query Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>access_token</td>
+<td>true</td>
+<td>Access token used to authenticate</td>
+</tr>
+<tr>
+<td>:CONTAINER</td>
+<td>true</td>
+<td>The available container</td>
+</tr>
+<tr>
+<td>:ID</td>
+<td>true</td>
+<td>Product ID</td>
+</tr>
+<tr>
+<td>:SCREENSHOT_DATE</td>
+<td>true</td>
+<td>Date screenshot was captured</td>
+</tr>
+</tbody></table>
+
+<aside class="notice">
+You must replace `:CONTAINER` with the available container, `:ID` with the Product ID and `:SCREENSHOT_DATE` with date screenshot was taken.
 </aside>
 
 <h2 id="search-all-products-in-json">Search All Products in JSON</h2>
@@ -573,7 +1060,7 @@ You must replace `:CONTAINER` with the available container you are searching in 
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 
-<p>Search all availble products based on a query or key word.</p>
+<p>Search all availble Products based on a query or key word.</p>
 
 <h3 id="http-request">HTTP Request</h3>
 
@@ -645,7 +1132,7 @@ You must replace `:QUERY` with what you are searching for.
 <span class="nt">&lt;/hash&gt;</span>
 </code></pre>
 
-<p>Search all availble products based on a query or key word</p>
+<p>Search all availble Products based on a query or key word</p>
 
 <h3 id="http-request">HTTP Request</h3>
 
