@@ -116,6 +116,8 @@ description | Given description for product
 type | Product Type
 image | Unique product image
 sku | Unique product sku
+mpn | Unique product manufacturer part number
+model | Unique product model number
 screenshot | Screenshot taken at the time data was collected
 price | Price of product at time of sale
 original_price | Original retail price of the product

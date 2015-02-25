@@ -218,6 +218,234 @@ You must replace `:CONTAINER` with the available container you are searching in 
 
 
 
+
+## Match Products in JSON
+
+> Request example
+
+```shell
+curl "http://api.pricels.com/v1/walmart-offers/match?model=86002596-01"
+  -H "Authorization: Token token=YOUR-ACCESS-TOKEN"
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "response": {
+    "status": 200
+  },
+  "results": [
+    {
+      "url": "http://www.walmart.com/ip/Google-Chromecast-HDMI-Streaming-Media-Player/33142918",
+      "date": "2015-02-24",
+      "open_graph": true,
+      "type": "Offer",
+      "id": "811571013579",
+      "image": "http://i5.walmartimages.com/dfw/dce07b8c-cc82/k2-_6f892d53-39df-4687-adae-fd16b2656547.v4.jpg",
+      "site_name": "Walmart.com",
+      "schema_org": true,
+      "tags": [
+        "Google",
+        "Chromecast",
+        "HDMI",
+        "Streaming",
+        "Media",
+        "Player",
+        "Wal-mart",
+        "Walmart.com"
+      ],
+      "name": "Google Chromecast HDMI Streaming Media Player",
+      "productID": "811571013579",
+      "screenshot": "811571013579/2015-02-23.jpg",
+      "price": "30.07",
+      "priceCurrency": "USD",
+      "availability": "InStock",
+      "title": "Media Streaming Players",
+      "sku": "811571013579",
+      "mpn": "86002596-01",
+      "brand": "Google",
+      "model": "86002596-01",
+      "facebook_shares": 42,
+      "google_shares": 47,
+      "twitter_shares": 12,
+      "pinterest_shares": 10,
+      "stumbleupon_shares": 1,
+      "total_shares": 112,
+      "container": "walmart-offers"
+    }
+  ]
+}
+```
+
+Match Products in a container based on a specific set of known parameters and values.
+
+### HTTP Request
+
+`GET http://api.pricels.com/v1/:CONTAINER/match`
+
+### Query Parameters
+
+Parameter | Required | Description
+--------- | ------- | -----------
+access_token | true | Access token used to authenticate
+:CONTAINER | true| The available container you are searching in
+:QUERY | true | What you are searching for
+results | false | Number of Results you want back (default: 1)
+fetch | false | Automatically crawl new data (default: true)
+social | false | Automatically fetch new social data (default: false)
+url | false | Unique URL for product
+date | false | When data was last gathered
+id | false | Unique ID for product
+tags | false | Tags associated with product
+name | false | Unique name of product
+description | false | Given description for product
+type | false | Product Type
+image | false | Unique product image
+sku | false | Unique product sku
+mpn | false | Unique product manufacturer part number
+model | false | Unique product model number
+price | false | Price of product at time of sale
+original_price | false | Original retail price of the product
+facebook_shares | false | Number of times product has been shared on Facebook
+google_shares | false | Number of times product has been shared on Google Plus
+twitter_shares | false | Number of times product has been shared on Twitter
+reddit_shares | false | Number of times product has been shared on Reddit
+linkedin_shares | false | Number of times product has been shared on LinkedIn
+pinterest_shares | false | Number of times product has been shared on Pinterest
+stumbleupon_shares | false | Number of times product has been shared on StumbleUpon
+total_shares | false | Number of times product has been shared on Social Media
+
+<aside class="notice">
+You must replace `:CONTAINER` with the available container you are matching against.
+</aside>
+
+
+
+
+## Match Products in XML
+
+> Request example
+
+```shell
+curl "http://api.pricels.com/v1/walmart-offers/match.xml"
+  -H "Authorization: Token token=YOUR-ACCESS-TOKEN"
+```
+
+> The above command returns XML structured like this:
+
+```xml
+<hash>
+  <response>
+    <status type="integer">200</status>
+  </response>
+  <results type="array">
+    <result>
+      <url>
+      http://www.walmart.com/ip/Google-Chromecast-HDMI-Streaming-Media-Player/33142918
+      </url>
+      <date>2015-02-25</date>
+      <open-graph type="boolean">true</open-graph>
+      <type>Offer</type>
+      <id>811571013579</id>
+      <image>
+      http://i5.walmartimages.com/dfw/dce07b8c-cc82/k2-_6f892d53-39df-4687-adae-fd16b2656547.v4.jpg
+      </image>
+      <site-name>Walmart.com</site-name>
+      <schema-org type="boolean">true</schema-org>
+      <tags type="array">
+        <tag>Google</tag>
+        <tag>Chromecast</tag>
+        <tag>HDMI</tag>
+        <tag>Streaming</tag>
+        <tag>Media</tag>
+        <tag>Player</tag>
+        <tag>Wal-mart</tag>
+        <tag>Walmart.com</tag>
+      </tags>
+      <name>Google Chromecast HDMI Streaming Media Player</name>
+      <productID>811571013579</productID>
+      <screenshot>811571013579/2015-02-23.jpg</screenshot>
+      <price>30.07</price>
+      <priceCurrency>USD</priceCurrency>
+      <availability>InStock</availability>
+      <title>Media Streaming Players</title>
+      <sku>811571013579</sku>
+      <mpn>86002596-01</mpn>
+      <brand>Google</brand>
+      <model>86002596-01</model>
+      <facebook-shares type="integer">42</facebook-shares>
+      <google-shares type="integer">47</google-shares>
+      <twitter-shares type="integer">12</twitter-shares>
+      <pinterest-shares type="integer">10</pinterest-shares>
+      <stumbleupon-shares type="integer">1</stumbleupon-shares>
+      <total-shares type="integer">112</total-shares>
+      <container>walmart-offers</container>
+    </result>
+  </results>
+</hash>
+```
+
+Match Products in a container based on a specific set of known parameters and values.
+
+### HTTP Request
+
+`GET http://api.pricels.com/v1/:CONTAINER/match.xml`
+
+### Query Parameters
+
+Parameter | Required | Description
+--------- | ------- | -----------
+access_token | true | Access token used to authenticate
+:CONTAINER | true| The available container you are searching in
+:QUERY | true | What you are searching for
+results | false | Number of Results you want back (default: 1)
+fetch | false | Automatically crawl new data (default: true)
+social | false | Automatically fetch new social data (default: false)
+url | false | Unique URL for product
+date | false | When data was last gathered
+id | false | Unique ID for product
+tags | false | Tags associated with product
+name | false | Unique name of product
+description | false | Given description for product
+type | false | Product Type
+image | false | Unique product image
+sku | false | Unique product sku
+mpn | false | Unique product manufacturer part number
+model | false | Unique product model number
+price | false | Price of product at time of sale
+original_price | false | Original retail price of the product
+facebook_shares | false | Number of times product has been shared on Facebook
+google_shares | false | Number of times product has been shared on Google Plus
+twitter_shares | false | Number of times product has been shared on Twitter
+reddit_shares | false | Number of times product has been shared on Reddit
+linkedin_shares | false | Number of times product has been shared on LinkedIn
+pinterest_shares | false | Number of times product has been shared on Pinterest
+stumbleupon_shares | false | Number of times product has been shared on StumbleUpon
+total_shares | false | Number of times product has been shared on Social Media
+
+<aside class="notice">
+You must replace `:CONTAINER` with the available container you are matching against.
+</aside>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ## Get Product in JSON
 
 > Request example
