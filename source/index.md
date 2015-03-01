@@ -3,8 +3,10 @@ title: Pricels.com API Documentation
 
 
 toc_footers:
-  - <a href='http://pricels.com'>Get a Access</a>
-  - <a href='http://pricels.com'>Get some help</a>
+  - <a href='http://about.pricels.com/'>Blog</a>
+  - <a href='http://about.pricels.com/what-we-do/'>What We Do?</a>
+  - <a href='http://about.pricels.com/get-access/'>Get API Access</a>
+  - <a href='http://about.pricels.com/get-access/'>Get Customer Support</a>
   - <a href='http://github.com/tripit/slate'>Documentation Powered by Slate</a>
   - <p>&#169; 2015 Pricels.com, Inc. San Diego, CA</p>
 
