@@ -5,7 +5,7 @@
 > Request example
 
 ```shell
-curl "http://api.pricels.com/v1"
+curl "http://api.pricenometry.com/v1"
   -H "Authorization: Token token=YOUR-ACCESS-TOKEN"
 ```
 
@@ -36,7 +36,7 @@ Check the status of your current api usage as well as available data sources to 
 
 ### HTTP Request
 
-`GET http://api.pricels.com/v1`
+`GET http://api.pricenometry.com/v1`
 
 ### Query Parameters
 
@@ -66,7 +66,7 @@ pending | Data still waiting to be added to processing
 > Request example
 
 ```shell
-curl "http://api.pricels.com/v1.xml"
+curl "http://api.pricenometry.com/v1.xml"
   -H "Authorization: Token token=YOUR-ACCESS-TOKEN"
 ```
 
@@ -97,7 +97,7 @@ Check the status of your current api usage as well as available data sources to 
 
 ### HTTP Request
 
-`GET http://api.pricels.com/v1.xml`
+`GET http://api.pricenometry.com/v1.xml`
 
 ### Query Parameters
 
@@ -126,7 +126,7 @@ pending | Data still waiting to be added to processing
 > Request example
 
 ```shell
-curl "http://api.pricels.com/v1/amazon-offers/search/chromecast"
+curl "http://api.pricenometry.com/v1/amazon-offers/search/chromecast"
   -H "Authorization: Token token=YOUR-ACCESS-TOKEN"
 ```
 
@@ -151,7 +151,7 @@ Search Products based on a query or key word.
 
 ### HTTP Request
 
-`GET http://api.pricels.com/v1/:CONTAINER/search/:QUERY`
+`GET http://api.pricenometry.com/v1/:CONTAINER/search/:QUERY`
 
 ### Query Parameters
 
@@ -175,7 +175,7 @@ You must replace `:CONTAINER` with the available container you are searching in 
 > Request example
 
 ```shell
-curl "http://api.pricels.com/v1/amazon-offers/search/chromecast.xml"
+curl "http://api.pricenometry.com/v1/amazon-offers/search/chromecast.xml"
   -H "Authorization: Token token=YOUR-ACCESS-TOKEN"
 ```
 
@@ -200,7 +200,7 @@ Search Products based on a query or key word.
 
 ### HTTP Request
 
-`GET http://api.pricels.com/v1/:CONTAINER/search/:QUERY.xml`
+`GET http://api.pricenometry.com/v1/:CONTAINER/search/:QUERY.xml`
 
 ### Query Parameters
 
@@ -224,7 +224,7 @@ You must replace `:CONTAINER` with the available container you are searching in 
 > Request example
 
 ```shell
-curl "http://api.pricels.com/v1/walmart-offers/match?model=86002596-01"
+curl "http://api.pricenometry.com/v1/walmart-offers/match?model=86002596-01"
   -H "Authorization: Token token=YOUR-ACCESS-TOKEN"
 ```
 
@@ -282,7 +282,7 @@ Match Products in a container based on a specific set of known parameters and va
 
 ### HTTP Request
 
-`GET http://api.pricels.com/v1/:CONTAINER/match`
+`GET http://api.pricenometry.com/v1/:CONTAINER/match`
 
 ### Query Parameters
 
@@ -328,7 +328,7 @@ You must replace `:CONTAINER` with the available container you are matching agai
 > Request example
 
 ```shell
-curl "http://api.pricels.com/v1/walmart-offers/match.xml?mpn=86002596-01"
+curl "http://api.pricenometry.com/v1/walmart-offers/match.xml?mpn=86002596-01"
   -H "Authorization: Token token=YOUR-ACCESS-TOKEN"
 ```
 
@@ -390,7 +390,7 @@ Match Products in a container based on a specific set of known parameters and va
 
 ### HTTP Request
 
-`GET http://api.pricels.com/v1/:CONTAINER/match.xml`
+`GET http://api.pricenometry.com/v1/:CONTAINER/match.xml`
 
 ### Query Parameters
 
@@ -435,7 +435,7 @@ You must replace `:CONTAINER` with the available container you are matching agai
 > Request example
 
 ```shell
-curl "http://api.pricels.com/v1/amazon-offers/B00DR0PDNE"
+curl "http://api.pricenometry.com/v1/amazon-offers/B00DR0PDNE"
   -H "Authorization: Token token=YOUR-ACCESS-TOKEN"
 ```
 
@@ -483,7 +483,7 @@ Get most up to date Product information by Product id.
 
 ### HTTP Request
 
-`GET http://api.pricels.com/v1/:CONTAINER/:ID`
+`GET http://api.pricenometry.com/v1/:CONTAINER/:ID`
 
 ### Query Parameters
 
@@ -507,7 +507,7 @@ You must replace `:CONTAINER` with the available container and `:ID` with the Pr
 > Request example
 
 ```shell
-curl "http://api.pricels.com/v1/amazon-offers/B00DR0PDNE.xml"
+curl "http://api.pricenometry.com/v1/amazon-offers/B00DR0PDNE.xml"
   -H "Authorization: Token token=YOUR-ACCESS-TOKEN"
 ```
 
@@ -561,7 +561,7 @@ Get most up to date Product information by Product id.
 
 ### HTTP Request
 
-`GET http://api.pricels.com/v1/:CONTAINER/:ID.xml`
+`GET http://api.pricenometry.com/v1/:CONTAINER/:ID.xml`
 
 ### Query Parameters
 
@@ -585,7 +585,7 @@ You must replace `:CONTAINER` with the available container and `:ID` with the Pr
 > Request example
 
 ```shell
-curl "http://api.pricels.com/v1/amazon-offers/B00DR0PDNE/history"
+curl "http://api.pricenometry.com/v1/amazon-offers/B00DR0PDNE/history"
   -H "Authorization: Token token=YOUR-ACCESS-TOKEN"
 ```
 
@@ -622,7 +622,7 @@ Get most up to date Product history by Product id.
 
 ### HTTP Request
 
-`GET http://api.pricels.com/v1/:CONTAINER/:ID/history`
+`GET http://api.pricenometry.com/v1/:CONTAINER/:ID/history`
 
 ### Query Parameters
 
@@ -646,7 +646,7 @@ You must replace `:CONTAINER` with the available container and `:ID` with the Pr
 > Request example
 
 ```shell
-curl "http://api.pricels.com/v1/amazon-offers/B00DR0PDNE/2015-02-24.jpg"
+curl "http://api.pricenometry.com/v1/amazon-offers/B00DR0PDNE/2015-02-24.jpg"
   -H "Authorization: Token token=YOUR-ACCESS-TOKEN"
 ```
 
@@ -656,7 +656,7 @@ curl "http://api.pricels.com/v1/amazon-offers/B00DR0PDNE/2015-02-24.jpg"
   <html>
     <body>
     You are being
-    <a href="https://amazon-screenshots.pricels.com/B00DR0PDNE/2015-02-24.jpg?AWSAccessKeyId=AUTO-GENERATED&Signature=AUTO-GENERATED&Expires=24-HOURS">redirected</a>.
+    <a href="https://amazon-screenshots.pricenometry.com/B00DR0PDNE/2015-02-24.jpg?AWSAccessKeyId=AUTO-GENERATED&Signature=AUTO-GENERATED&Expires=24-HOURS">redirected</a>.
     </body>
   </html>
 ```
@@ -665,7 +665,7 @@ Get Product redirect to screenshot image.
 
 ### HTTP Request
 
-`GET http://api.pricels.com/v1/:CONTAINER/:ID/:SCREENSHOT_DATE.jpg`
+`GET http://api.pricenometry.com/v1/:CONTAINER/:ID/:SCREENSHOT_DATE.jpg`
 
 ### Query Parameters
 
@@ -688,7 +688,7 @@ You must replace `:CONTAINER` with the available container, `:ID` with the Produ
 > Request example
 
 ```shell
-curl "http://api.pricels.com/v1/amazon-offers/B00DR0PDNE/2015-02-24"
+curl "http://api.pricenometry.com/v1/amazon-offers/B00DR0PDNE/2015-02-24"
   -H "Authorization: Token token=YOUR-ACCESS-TOKEN"
 ```
 
@@ -700,7 +700,7 @@ curl "http://api.pricels.com/v1/amazon-offers/B00DR0PDNE/2015-02-24"
     "status": 200
   },
   "id": "B00DR0PDNE",
-  "redirect_url": "https://amazon-screenshots.pricels.com/B00DR0PDNE/2015-02-24.jpg?AWSAccessKeyId=AUTO-GENERATED&Signature=AUTO-GENERATED&Expires=24-HOURS"
+  "redirect_url": "https://amazon-screenshots.pricenometry.com/B00DR0PDNE/2015-02-24.jpg?AWSAccessKeyId=AUTO-GENERATED&Signature=AUTO-GENERATED&Expires=24-HOURS"
 }
 ```
 
@@ -708,7 +708,7 @@ Get Product screenshot in JSON form.
 
 ### HTTP Request
 
-`GET http://api.pricels.com/v1/:CONTAINER/:ID/:SCREENSHOT_DATE`
+`GET http://api.pricenometry.com/v1/:CONTAINER/:ID/:SCREENSHOT_DATE`
 
 ### Query Parameters
 
@@ -730,7 +730,7 @@ You must replace `:CONTAINER` with the available container, `:ID` with the Produ
 > Request example
 
 ```shell
-curl "http://api.pricels.com/v1/amazon-offers/B00DR0PDNE/2015-02-24.xml"
+curl "http://api.pricenometry.com/v1/amazon-offers/B00DR0PDNE/2015-02-24.xml"
   -H "Authorization: Token token=YOUR-ACCESS-TOKEN"
 ```
 
@@ -743,7 +743,7 @@ curl "http://api.pricels.com/v1/amazon-offers/B00DR0PDNE/2015-02-24.xml"
   </response>
   <id>B00DR0PDNE</id>
   <redirect-url>
-  https://amazon-screenshots.pricels.com/B00DR0PDNE/2015-02-24.jpg?AWSAccessKeyId=AUTO-GENERATED&Signature=AUTO-GENERATED&Expires=24-HOURS
+  https://amazon-screenshots.pricenometry.com/B00DR0PDNE/2015-02-24.jpg?AWSAccessKeyId=AUTO-GENERATED&Signature=AUTO-GENERATED&Expires=24-HOURS
   </redirect-url>
 </hash>
 ```
@@ -752,7 +752,7 @@ Get Product screenshot in XML form.
 
 ### HTTP Request
 
-`GET http://api.pricels.com/v1/:CONTAINER/:ID/:SCREENSHOT_DATE.xml`
+`GET http://api.pricenometry.com/v1/:CONTAINER/:ID/:SCREENSHOT_DATE.xml`
 
 ### Query Parameters
 
@@ -774,7 +774,7 @@ You must replace `:CONTAINER` with the available container, `:ID` with the Produ
 > Request example
 
 ```shell
-curl "http://api.pricels.com/v1/search/chromecast"
+curl "http://api.pricenometry.com/v1/search/chromecast"
   -H "Authorization: Token token=YOUR-ACCESS-TOKEN"
 ```
 
@@ -814,7 +814,7 @@ Search all availble Products based on a query or key word.
 
 ### HTTP Request
 
-`GET http://api.pricels.com/v1/search/:QUERY`
+`GET http://api.pricenometry.com/v1/search/:QUERY`
 
 ### Query Parameters
 
@@ -835,7 +835,7 @@ You must replace `:QUERY` with what you are searching for.
 > Request example
 
 ```shell
-curl "http://api.pricels.com/v1/search/chromecast.xml"
+curl "http://api.pricenometry.com/v1/search/chromecast.xml"
   -H "Authorization: Token token=YOUR-ACCESS-TOKEN"
 ```
 
@@ -875,7 +875,7 @@ Search all availble Products based on a query or key word
 
 ### HTTP Request
 
-`GET http://api.pricels.com/v1/search/:QUERY.xml`
+`GET http://api.pricenometry.com/v1/search/:QUERY.xml`
 
 ### Query Parameters
 
@@ -895,7 +895,7 @@ You must replace `:QUERY` with what you are searching for.
 > Request example
 
 ```shell
-curl "http://api.pricels.com/v1/match?name=chromecast"
+curl "http://api.pricenometry.com/v1/match?name=chromecast"
   -H "Authorization: Token token=YOUR-ACCESS-TOKEN"
 ```
 
@@ -935,7 +935,7 @@ Match all Products based on a specific set of known parameters and values.
 
 ### HTTP Request
 
-`GET http://api.pricels.com/v1/match`
+`GET http://api.pricenometry.com/v1/match`
 
 ### Query Parameters
 
@@ -977,7 +977,7 @@ total_shares | false | Number of times product has been shared on Social Media
 > Request example
 
 ```shell
-curl "http://api.pricels.com/v1/match.xml?name=chromecast"
+curl "http://api.pricenometry.com/v1/match.xml?name=chromecast"
   -H "Authorization: Token token=YOUR-ACCESS-TOKEN"
 ```
 
@@ -1017,7 +1017,7 @@ Match all Products based on a specific set of known parameters and values.
 
 ### HTTP Request
 
-`GET http://api.pricels.com/v1/match.xml`
+`GET http://api.pricenometry.com/v1/match.xml`
 
 ### Query Parameters
 

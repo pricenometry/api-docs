@@ -1,14 +1,14 @@
 ---
-title: Pricels.com API Documentation
+title: Pricenometry API Documentation
 
 
 toc_footers:
-  - <a href='http://about.pricels.com/'>Blog</a>
-  - <a href='http://about.pricels.com/what-we-do/'>What We Do?</a>
-  - <a href='http://about.pricels.com/get-access/'>Get API Access</a>
-  - <a href='http://about.pricels.com/get-access/'>Get Customer Support</a>
+  - <a href='http://about.pricenometry.com/'>Blog</a>
+  - <a href='http://about.pricenometry.com/what-we-do/'>What We Do?</a>
+  - <a href='http://about.pricenometry.com/get-access/'>Get API Access</a>
+  - <a href='http://about.pricenometry.com/get-access/'>Get Customer Support</a>
   - <a href='http://github.com/tripit/slate'>Documentation Powered by Slate</a>
-  - <p>&#169; 2015 Pricels.com, Inc. San Diego, CA</p>
+  - <p>&#169; 2015 Pricenometry, Inc. San Diego, CA</p>
 
 includes:
   - apiv1
@@ -21,17 +21,17 @@ search: true
 
 # Introduction
 
-Welcome to the Pricels.com API documentation! Pricels (pronounced Price-Less) provides real time data to our customers. Through our system, you will be able to receive daily updates on any price changes or product promotions for your product, a competitor’s product or a product you are interested in as a consumer across hundreds of websites. Our entire system is automated so there is no waiting or combing through raw data to find the pricing information you need. We've scaled our technology to provide you with up to the minute real time intelligence as well as trends and forecasts that you can use from real daily available data, not guess work. Pricels.com will change the way you research product pricing.
+Welcome to the Pricenometry API documentation! We provide real time data to our customers. Through our system, you will be able to receive daily updates on any price changes or product promotions for your product, a competitor’s product or a product you are interested in as a consumer across hundreds of websites. Our entire system is automated so there is no waiting or combing through raw data to find the pricing information you need. We've scaled our technology to provide you with up to the minute real time intelligence as well as trends and forecasts that you can use from real daily available data, not guess work. We will change the way you research product pricing.
 
-The API is RESTful and enables gathering pricing data on [Pricels.com](http://pricels.com) and it’s properties. The API also allows you to check the status of a product and map your pricing data to our database as well as retrieve all your pricing data within our system.
+The API is RESTful and enables gathering pricing data on [Pricenometry.com](http://pricenometry.com) and it’s properties. The API also allows you to check the status of a product and map your pricing data to our database as well as retrieve all your pricing data within our system.
 
 Sample code is currently available as cURL in the menu to the right. Requests and responses are all in JSON.
 
-The API base url is: **https://api.pricels.com/v1/**
+The API base url is: **https://api.pricenometry.com/v1/**
 
 The API is versioned, the current version is 1. This is designated in the url path with /v1
 
-If you have any question please visit [our support pages](http://pricels.com).
+If you have any question please visit [our support pages](http://pricenometry.com).
 
 
 # Authentication
@@ -40,15 +40,15 @@ If you have any question please visit [our support pages](http://pricels.com).
 
 ```shell
 # With shell, you can just pass the correct header with each request
-curl http://api.pricels.com
+curl http://api.pricenometry.com
   -H "Authorization: Token token=YOUR-ACCESS-TOKEN"
 ```
 
 > Make sure to replace `YOUR-ACCESS-TOKEN` with your API access key.
 
-Pricels uses API keys to allow access to the API. You can get an account by contacting us.
+We use API keys to allow access to the API. You can get an account by contacting us.
 
-The Pricels API expects for the API key to be included in all API requests to the server. The API key can be passed either as a parameter like the following:
+The API expects for the API key to be included in all API requests to the server. The API key can be passed either as a parameter like the following:
 
 `access_token=YOUR-ACCESS-TOKEN`
 
