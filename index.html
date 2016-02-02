@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <title>Pricels.com API Documentation</title>
+    <title>Pricenometry API Documentation</title>
 
     <link href="stylesheets/screen.css" rel="stylesheet" type="text/css" media="screen" />
     <link href="stylesheets/print.css" rel="stylesheet" type="text/css" media="print" />
@@ -28,12 +28,12 @@
       <div id="toc">
       </div>
         <ul class="toc-footer">
-            <li><a href='http://about.pricels.com/'>Blog</a></li>
-            <li><a href='http://about.pricels.com/what-we-do/'>What We Do?</a></li>
-            <li><a href='http://about.pricels.com/get-access/'>Get API Access</a></li>
-            <li><a href='http://about.pricels.com/get-access/'>Get Customer Support</a></li>
+            <li><a href='http://about.pricenometry.com/'>Blog</a></li>
+            <li><a href='http://about.pricenometry.com/what-we-do/'>What We Do?</a></li>
+            <li><a href='http://about.pricenometry.com/get-access/'>Get API Access</a></li>
+            <li><a href='http://about.pricenometry.com/get-access/'>Get Customer Support</a></li>
             <li><a href='http://github.com/tripit/slate'>Documentation Powered by Slate</a></li>
-            <li><p>&#169; 2015 Pricels.com, Inc. San Diego, CA</p></li>
+            <li><p>&#169; 2015 Pricenometry, Inc. San Diego, CA</p></li>
         </ul>
     </div>
     <div class="page-wrapper">
@@ -41,17 +41,17 @@
       <div class="content">
         <h1 id="introduction">Introduction</h1>
 
-<p>Welcome to the Pricels.com API documentation! Pricels (pronounced Price-Less) provides real time data to our customers. Through our system, you will be able to receive daily updates on any price changes or product promotions for your product, a competitor’s product or a product you are interested in as a consumer across hundreds of websites. Our entire system is automated so there is no waiting or combing through raw data to find the pricing information you need. We&rsquo;ve scaled our technology to provide you with up to the minute real time intelligence as well as trends and forecasts that you can use from real daily available data, not guess work. Pricels.com will change the way you research product pricing.</p>
+<p>Welcome to the Pricenometry API documentation! We provide real time data to our customers. Through our system, you will be able to receive daily updates on any price changes or product promotions for your product, a competitor’s product or a product you are interested in as a consumer across hundreds of websites. Our entire system is automated so there is no waiting or combing through raw data to find the pricing information you need. We&rsquo;ve scaled our technology to provide you with up to the minute real time intelligence as well as trends and forecasts that you can use from real daily available data, not guess work. We will change the way you research product pricing.</p>
 
-<p>The API is RESTful and enables gathering pricing data on <a href="http://pricels.com">Pricels.com</a> and it’s properties. The API also allows you to check the status of a product and map your pricing data to our database as well as retrieve all your pricing data within our system.</p>
+<p>The API is RESTful and enables gathering pricing data on <a href="http://pricenometry.com">Pricenometry.com</a> and it’s properties. The API also allows you to check the status of a product and map your pricing data to our database as well as retrieve all your pricing data within our system.</p>
 
 <p>Sample code is currently available as cURL in the menu to the right. Requests and responses are all in JSON.</p>
 
-<p>The API base url is: <strong>https://api.pricels.com/v1/</strong></p>
+<p>The API base url is: <strong>https://api.pricenometry.com/v1/</strong></p>
 
 <p>The API is versioned, the current version is 1. This is designated in the url path with /v1</p>
 
-<p>If you have any question please visit <a href="http://pricels.com">our support pages</a>.</p>
+<p>If you have any question please visit <a href="http://pricenometry.com">our support pages</a>.</p>
 
 <h1 id="authentication">Authentication</h1>
 
@@ -59,7 +59,7 @@
 <p>To set authorization, use this code:</p>
 </blockquote>
 <pre><code class="highlight shell"><span class="c"># With shell, you can just pass the correct header with each request</span>
-curl http://api.pricels.com
+curl http://api.pricenometry.com
   -H <span class="s2">"Authorization: Token token=YOUR-ACCESS-TOKEN"</span>
 </code></pre>
 
@@ -67,9 +67,9 @@ curl http://api.pricels.com
 <p>Make sure to replace <code class="prettyprint">YOUR-ACCESS-TOKEN</code> with your API access key.</p>
 </blockquote>
 
-<p>Pricels uses API keys to allow access to the API. You can get an account by contacting us.</p>
+<p>We use API keys to allow access to the API. You can get an account by contacting us.</p>
 
-<p>The Pricels API expects for the API key to be included in all API requests to the server. The API key can be passed either as a parameter like the following:</p>
+<p>The API expects for the API key to be included in all API requests to the server. The API key can be passed either as a parameter like the following:</p>
 
 <p><code class="prettyprint">access_token=YOUR-ACCESS-TOKEN</code></p>
 
@@ -231,7 +231,7 @@ You must replace `YOUR-ACCESS-TOKEN` with your API key.
 <blockquote>
 <p>Request example</p>
 </blockquote>
-<pre><code class="highlight shell">curl <span class="s2">"http://api.pricels.com/v1"</span>
+<pre><code class="highlight shell">curl <span class="s2">"http://api.pricenometry.com/v1"</span>
   -H <span class="s2">"Authorization: Token token=YOUR-ACCESS-TOKEN"</span>
 </code></pre>
 
@@ -262,7 +262,7 @@ You must replace `YOUR-ACCESS-TOKEN` with your API key.
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">GET http://api.pricels.com/v1</code></p>
+<p><code class="prettyprint">GET http://api.pricenometry.com/v1</code></p>
 
 <h3 id="query-parameters">Query Parameters</h3>
 
@@ -327,7 +327,7 @@ You must replace `YOUR-ACCESS-TOKEN` with your API key.
 <blockquote>
 <p>Request example</p>
 </blockquote>
-<pre><code class="highlight shell">curl <span class="s2">"http://api.pricels.com/v1.xml"</span>
+<pre><code class="highlight shell">curl <span class="s2">"http://api.pricenometry.com/v1.xml"</span>
   -H <span class="s2">"Authorization: Token token=YOUR-ACCESS-TOKEN"</span>
 </code></pre>
 
@@ -358,7 +358,7 @@ You must replace `YOUR-ACCESS-TOKEN` with your API key.
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">GET http://api.pricels.com/v1.xml</code></p>
+<p><code class="prettyprint">GET http://api.pricenometry.com/v1.xml</code></p>
 
 <h3 id="query-parameters">Query Parameters</h3>
 
@@ -423,7 +423,7 @@ You must replace `YOUR-ACCESS-TOKEN` with your API key.
 <blockquote>
 <p>Request example</p>
 </blockquote>
-<pre><code class="highlight shell">curl <span class="s2">"http://api.pricels.com/v1/amazon-offers/search/chromecast"</span>
+<pre><code class="highlight shell">curl <span class="s2">"http://api.pricenometry.com/v1/amazon-offers/search/chromecast"</span>
   -H <span class="s2">"Authorization: Token token=YOUR-ACCESS-TOKEN"</span>
 </code></pre>
 
@@ -448,7 +448,7 @@ You must replace `YOUR-ACCESS-TOKEN` with your API key.
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">GET http://api.pricels.com/v1/:CONTAINER/search/:QUERY</code></p>
+<p><code class="prettyprint">GET http://api.pricenometry.com/v1/:CONTAINER/search/:QUERY</code></p>
 
 <h3 id="query-parameters">Query Parameters</h3>
 
@@ -495,7 +495,7 @@ You must replace `:CONTAINER` with the available container you are searching in 
 <blockquote>
 <p>Request example</p>
 </blockquote>
-<pre><code class="highlight shell">curl <span class="s2">"http://api.pricels.com/v1/amazon-offers/search/chromecast.xml"</span>
+<pre><code class="highlight shell">curl <span class="s2">"http://api.pricenometry.com/v1/amazon-offers/search/chromecast.xml"</span>
   -H <span class="s2">"Authorization: Token token=YOUR-ACCESS-TOKEN"</span>
 </code></pre>
 
@@ -520,7 +520,7 @@ You must replace `:CONTAINER` with the available container you are searching in 
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">GET http://api.pricels.com/v1/:CONTAINER/search/:QUERY.xml</code></p>
+<p><code class="prettyprint">GET http://api.pricenometry.com/v1/:CONTAINER/search/:QUERY.xml</code></p>
 
 <h3 id="query-parameters">Query Parameters</h3>
 
@@ -567,7 +567,7 @@ You must replace `:CONTAINER` with the available container you are searching in 
 <blockquote>
 <p>Request example</p>
 </blockquote>
-<pre><code class="highlight shell">curl <span class="s2">"http://api.pricels.com/v1/walmart-offers/match?model=86002596-01"</span>
+<pre><code class="highlight shell">curl <span class="s2">"http://api.pricenometry.com/v1/walmart-offers/match?model=86002596-01"</span>
   -H <span class="s2">"Authorization: Token token=YOUR-ACCESS-TOKEN"</span>
 </code></pre>
 
@@ -625,7 +625,7 @@ You must replace `:CONTAINER` with the available container you are searching in 
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">GET http://api.pricels.com/v1/:CONTAINER/match</code></p>
+<p><code class="prettyprint">GET http://api.pricenometry.com/v1/:CONTAINER/match</code></p>
 
 <h3 id="query-parameters">Query Parameters</h3>
 
@@ -782,7 +782,7 @@ You must replace `:CONTAINER` with the available container you are matching agai
 <blockquote>
 <p>Request example</p>
 </blockquote>
-<pre><code class="highlight shell">curl <span class="s2">"http://api.pricels.com/v1/walmart-offers/match.xml?mpn=86002596-01"</span>
+<pre><code class="highlight shell">curl <span class="s2">"http://api.pricenometry.com/v1/walmart-offers/match.xml?mpn=86002596-01"</span>
   -H <span class="s2">"Authorization: Token token=YOUR-ACCESS-TOKEN"</span>
 </code></pre>
 
@@ -844,7 +844,7 @@ You must replace `:CONTAINER` with the available container you are matching agai
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">GET http://api.pricels.com/v1/:CONTAINER/match.xml</code></p>
+<p><code class="prettyprint">GET http://api.pricenometry.com/v1/:CONTAINER/match.xml</code></p>
 
 <h3 id="query-parameters">Query Parameters</h3>
 
@@ -1001,7 +1001,7 @@ You must replace `:CONTAINER` with the available container you are matching agai
 <blockquote>
 <p>Request example</p>
 </blockquote>
-<pre><code class="highlight shell">curl <span class="s2">"http://api.pricels.com/v1/amazon-offers/B00DR0PDNE"</span>
+<pre><code class="highlight shell">curl <span class="s2">"http://api.pricenometry.com/v1/amazon-offers/B00DR0PDNE"</span>
   -H <span class="s2">"Authorization: Token token=YOUR-ACCESS-TOKEN"</span>
 </code></pre>
 
@@ -1049,7 +1049,7 @@ You must replace `:CONTAINER` with the available container you are matching agai
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">GET http://api.pricels.com/v1/:CONTAINER/:ID</code></p>
+<p><code class="prettyprint">GET http://api.pricenometry.com/v1/:CONTAINER/:ID</code></p>
 
 <h3 id="query-parameters">Query Parameters</h3>
 
@@ -1096,7 +1096,7 @@ You must replace `:CONTAINER` with the available container and `:ID` with the Pr
 <blockquote>
 <p>Request example</p>
 </blockquote>
-<pre><code class="highlight shell">curl <span class="s2">"http://api.pricels.com/v1/amazon-offers/B00DR0PDNE.xml"</span>
+<pre><code class="highlight shell">curl <span class="s2">"http://api.pricenometry.com/v1/amazon-offers/B00DR0PDNE.xml"</span>
   -H <span class="s2">"Authorization: Token token=YOUR-ACCESS-TOKEN"</span>
 </code></pre>
 
@@ -1150,7 +1150,7 @@ You must replace `:CONTAINER` with the available container and `:ID` with the Pr
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">GET http://api.pricels.com/v1/:CONTAINER/:ID.xml</code></p>
+<p><code class="prettyprint">GET http://api.pricenometry.com/v1/:CONTAINER/:ID.xml</code></p>
 
 <h3 id="query-parameters">Query Parameters</h3>
 
@@ -1197,7 +1197,7 @@ You must replace `:CONTAINER` with the available container and `:ID` with the Pr
 <blockquote>
 <p>Request example</p>
 </blockquote>
-<pre><code class="highlight shell">curl <span class="s2">"http://api.pricels.com/v1/amazon-offers/B00DR0PDNE/history"</span>
+<pre><code class="highlight shell">curl <span class="s2">"http://api.pricenometry.com/v1/amazon-offers/B00DR0PDNE/history"</span>
   -H <span class="s2">"Authorization: Token token=YOUR-ACCESS-TOKEN"</span>
 </code></pre>
 
@@ -1234,7 +1234,7 @@ You must replace `:CONTAINER` with the available container and `:ID` with the Pr
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">GET http://api.pricels.com/v1/:CONTAINER/:ID/history</code></p>
+<p><code class="prettyprint">GET http://api.pricenometry.com/v1/:CONTAINER/:ID/history</code></p>
 
 <h3 id="query-parameters">Query Parameters</h3>
 
@@ -1281,7 +1281,7 @@ You must replace `:CONTAINER` with the available container and `:ID` with the Pr
 <blockquote>
 <p>Request example</p>
 </blockquote>
-<pre><code class="highlight shell">curl <span class="s2">"http://api.pricels.com/v1/amazon-offers/B00DR0PDNE/2015-02-24.jpg"</span>
+<pre><code class="highlight shell">curl <span class="s2">"http://api.pricenometry.com/v1/amazon-offers/B00DR0PDNE/2015-02-24.jpg"</span>
   -H <span class="s2">"Authorization: Token token=YOUR-ACCESS-TOKEN"</span>
 </code></pre>
 
@@ -1291,7 +1291,7 @@ You must replace `:CONTAINER` with the available container and `:ID` with the Pr
 <pre><code class="highlight html">  <span class="nt">&lt;html&gt;</span>
     <span class="nt">&lt;body&gt;</span>
     You are being
-    <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"https://amazon-screenshots.pricels.com/B00DR0PDNE/2015-02-24.jpg?AWSAccessKeyId=AUTO-GENERATED&amp;Signature=AUTO-GENERATED&amp;Expires=24-HOURS"</span><span class="nt">&gt;</span>redirected<span class="nt">&lt;/a&gt;</span>.
+    <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"https://amazon-screenshots.pricenometry.com/B00DR0PDNE/2015-02-24.jpg?AWSAccessKeyId=AUTO-GENERATED&amp;Signature=AUTO-GENERATED&amp;Expires=24-HOURS"</span><span class="nt">&gt;</span>redirected<span class="nt">&lt;/a&gt;</span>.
     <span class="nt">&lt;/body&gt;</span>
   <span class="nt">&lt;/html&gt;</span>
 </code></pre>
@@ -1300,7 +1300,7 @@ You must replace `:CONTAINER` with the available container and `:ID` with the Pr
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">GET http://api.pricels.com/v1/:CONTAINER/:ID/:SCREENSHOT_DATE.jpg</code></p>
+<p><code class="prettyprint">GET http://api.pricenometry.com/v1/:CONTAINER/:ID/:SCREENSHOT_DATE.jpg</code></p>
 
 <h3 id="query-parameters">Query Parameters</h3>
 
@@ -1342,7 +1342,7 @@ You must replace `:CONTAINER` with the available container, `:ID` with the Produ
 <blockquote>
 <p>Request example</p>
 </blockquote>
-<pre><code class="highlight shell">curl <span class="s2">"http://api.pricels.com/v1/amazon-offers/B00DR0PDNE/2015-02-24"</span>
+<pre><code class="highlight shell">curl <span class="s2">"http://api.pricenometry.com/v1/amazon-offers/B00DR0PDNE/2015-02-24"</span>
   -H <span class="s2">"Authorization: Token token=YOUR-ACCESS-TOKEN"</span>
 </code></pre>
 
@@ -1354,7 +1354,7 @@ You must replace `:CONTAINER` with the available container, `:ID` with the Produ
     </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="w">
   </span><span class="p">},</span><span class="w">
   </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"B00DR0PDNE"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"redirect_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://amazon-screenshots.pricels.com/B00DR0PDNE/2015-02-24.jpg?AWSAccessKeyId=AUTO-GENERATED&amp;Signature=AUTO-GENERATED&amp;Expires=24-HOURS"</span><span class="w">
+  </span><span class="s2">"redirect_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://amazon-screenshots.pricenometry.com/B00DR0PDNE/2015-02-24.jpg?AWSAccessKeyId=AUTO-GENERATED&amp;Signature=AUTO-GENERATED&amp;Expires=24-HOURS"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 
@@ -1362,7 +1362,7 @@ You must replace `:CONTAINER` with the available container, `:ID` with the Produ
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">GET http://api.pricels.com/v1/:CONTAINER/:ID/:SCREENSHOT_DATE</code></p>
+<p><code class="prettyprint">GET http://api.pricenometry.com/v1/:CONTAINER/:ID/:SCREENSHOT_DATE</code></p>
 
 <h3 id="query-parameters">Query Parameters</h3>
 
@@ -1404,7 +1404,7 @@ You must replace `:CONTAINER` with the available container, `:ID` with the Produ
 <blockquote>
 <p>Request example</p>
 </blockquote>
-<pre><code class="highlight shell">curl <span class="s2">"http://api.pricels.com/v1/amazon-offers/B00DR0PDNE/2015-02-24.xml"</span>
+<pre><code class="highlight shell">curl <span class="s2">"http://api.pricenometry.com/v1/amazon-offers/B00DR0PDNE/2015-02-24.xml"</span>
   -H <span class="s2">"Authorization: Token token=YOUR-ACCESS-TOKEN"</span>
 </code></pre>
 
@@ -1417,7 +1417,7 @@ You must replace `:CONTAINER` with the available container, `:ID` with the Produ
   <span class="nt">&lt;/response&gt;</span>
   <span class="nt">&lt;id&gt;</span>B00DR0PDNE<span class="nt">&lt;/id&gt;</span>
   <span class="nt">&lt;redirect-url&gt;</span>
-  https://amazon-screenshots.pricels.com/B00DR0PDNE/2015-02-24.jpg?AWSAccessKeyId=AUTO-GENERATED<span class="err">&amp;</span>Signature=AUTO-GENERATED<span class="err">&amp;</span>Expires=24-HOURS
+  https://amazon-screenshots.pricenometry.com/B00DR0PDNE/2015-02-24.jpg?AWSAccessKeyId=AUTO-GENERATED<span class="err">&amp;</span>Signature=AUTO-GENERATED<span class="err">&amp;</span>Expires=24-HOURS
   <span class="nt">&lt;/redirect-url&gt;</span>
 <span class="nt">&lt;/hash&gt;</span>
 </code></pre>
@@ -1426,7 +1426,7 @@ You must replace `:CONTAINER` with the available container, `:ID` with the Produ
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">GET http://api.pricels.com/v1/:CONTAINER/:ID/:SCREENSHOT_DATE.xml</code></p>
+<p><code class="prettyprint">GET http://api.pricenometry.com/v1/:CONTAINER/:ID/:SCREENSHOT_DATE.xml</code></p>
 
 <h3 id="query-parameters">Query Parameters</h3>
 
@@ -1468,7 +1468,7 @@ You must replace `:CONTAINER` with the available container, `:ID` with the Produ
 <blockquote>
 <p>Request example</p>
 </blockquote>
-<pre><code class="highlight shell">curl <span class="s2">"http://api.pricels.com/v1/search/chromecast"</span>
+<pre><code class="highlight shell">curl <span class="s2">"http://api.pricenometry.com/v1/search/chromecast"</span>
   -H <span class="s2">"Authorization: Token token=YOUR-ACCESS-TOKEN"</span>
 </code></pre>
 
@@ -1508,7 +1508,7 @@ You must replace `:CONTAINER` with the available container, `:ID` with the Produ
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">GET http://api.pricels.com/v1/search/:QUERY</code></p>
+<p><code class="prettyprint">GET http://api.pricenometry.com/v1/search/:QUERY</code></p>
 
 <h3 id="query-parameters">Query Parameters</h3>
 
@@ -1540,7 +1540,7 @@ You must replace `:QUERY` with what you are searching for.
 <blockquote>
 <p>Request example</p>
 </blockquote>
-<pre><code class="highlight shell">curl <span class="s2">"http://api.pricels.com/v1/search/chromecast.xml"</span>
+<pre><code class="highlight shell">curl <span class="s2">"http://api.pricenometry.com/v1/search/chromecast.xml"</span>
   -H <span class="s2">"Authorization: Token token=YOUR-ACCESS-TOKEN"</span>
 </code></pre>
 
@@ -1580,7 +1580,7 @@ You must replace `:QUERY` with what you are searching for.
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">GET http://api.pricels.com/v1/search/:QUERY.xml</code></p>
+<p><code class="prettyprint">GET http://api.pricenometry.com/v1/search/:QUERY.xml</code></p>
 
 <h3 id="query-parameters">Query Parameters</h3>
 
@@ -1612,7 +1612,7 @@ You must replace `:QUERY` with what you are searching for.
 <blockquote>
 <p>Request example</p>
 </blockquote>
-<pre><code class="highlight shell">curl <span class="s2">"http://api.pricels.com/v1/match?name=chromecast"</span>
+<pre><code class="highlight shell">curl <span class="s2">"http://api.pricenometry.com/v1/match?name=chromecast"</span>
   -H <span class="s2">"Authorization: Token token=YOUR-ACCESS-TOKEN"</span>
 </code></pre>
 
@@ -1652,7 +1652,7 @@ You must replace `:QUERY` with what you are searching for.
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">GET http://api.pricels.com/v1/match</code></p>
+<p><code class="prettyprint">GET http://api.pricenometry.com/v1/match</code></p>
 
 <h3 id="query-parameters">Query Parameters</h3>
 
@@ -1805,7 +1805,7 @@ You must replace `:QUERY` with what you are searching for.
 <blockquote>
 <p>Request example</p>
 </blockquote>
-<pre><code class="highlight shell">curl <span class="s2">"http://api.pricels.com/v1/match.xml?name=chromecast"</span>
+<pre><code class="highlight shell">curl <span class="s2">"http://api.pricenometry.com/v1/match.xml?name=chromecast"</span>
   -H <span class="s2">"Authorization: Token token=YOUR-ACCESS-TOKEN"</span>
 </code></pre>
 
@@ -1845,7 +1845,7 @@ You must replace `:QUERY` with what you are searching for.
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">GET http://api.pricels.com/v1/match.xml</code></p>
+<p><code class="prettyprint">GET http://api.pricenometry.com/v1/match.xml</code></p>
 
 <h3 id="query-parameters">Query Parameters</h3>
 
@@ -2051,7 +2051,7 @@ You must replace `:QUERY` with what you are searching for.
 
           <h1 id="terms-and-conditions">Terms and Conditions</h1>
 
-<p>By using this API, you agree to the terms and conditions set forth at <a href="pricels.com">Pricels.com</a>.</p>
+<p>By using this API, you agree to the terms and conditions set forth at <a href="pricenometry.com">pricenometry.com</a>.</p>
 
       </div>
       <div class="dark-box">
