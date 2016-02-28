@@ -1011,7 +1011,7 @@ You must replace `:TYPE` with what you want compared.
 
 
 
-## Batch All Products
+## Batch Products
 
 > Request example
 
