@@ -69,36 +69,48 @@ You must replace `YOUR-ACCESS-TOKEN` with your API key.
   "response": {
     "status": 200
   },
-  "url": "http://www.amazon.com/Google-Chromecast-Streaming-Media-Player/dp/B00DR0PDNE",
-  "date": "2015-02-10",
-  "id": "B00DR0PDNE",
-  "tags": [
-    "Google",
-    "Chromecast",
-    "HDMI",
-    "Streaming",
-    "Media",
-    "Player",
-    "Inc.",
-    "H2G2-42",
-    "86002596-01"
+  "result": {
+    "id": 9071056,
+    "container": "bestbuy-offers",
+    "name": "Google - Chromecast - Black",
+    "social": {
+      "facebook_shares": 81,
+      "google_shares": 110,
+      "twitter_shares": 3,
+      "pinterest_shares": 1
+    },
+    "price": {
+      "priceCurrency": "USD",
+      "price": 35,
+      "original_price": 35,
+      "instant_rebate_price": 10.01
+    },
+    "url": "http://www.bestbuy.com/site/google-chromecast-black/9071056.p?id=1219013308425&skuId=9071056",
+    "date": "2016-02-24",
+    "open_graph": true,
+    "type": "Offer",
+    "description": "Google Chromecast: Easily stream your favorite apps and media to your TV via Wi-Fi with Chromecast. Use the included USB cable to plug the Chromecast into your TV, and control streaming content using your compatible smartphone, tablet or computer.",
+    "image": "http://pisces.bbystatic.com/image2/BestBuy_US/images/products/9071/9071056_sa.jpg;canvasHeight=210;canvasWidth=210",
+    "site_name": "Best buy",
+    "schema_org": true,
+    "tags": [
+      "GOOGLE",
+      "Chromecast",
+      "H2G2-42",
+      "Wireless",
+      "Multimedia",
+      "Networking"
     ],
-  "name": "Google Chromecast HDMI Streaming Media Player",
-  "description": "Amazon.com: Google Chromecast HDMI Streaming Media Player: Electronics",
-  "type": "Offer",
-  "image": "http://ecx.images-amazon.com/images/I/811nvG%2BLgML._SL1500_.jpg",
-  "sku": "B00DR0PDNE",
-  "screenshot": "B00DR0PDNE/2015-02-10.jpg",
-  "price": "31.78",
-  "original_price": "35.00",
-  "facebook_shares": 48466,
-  "google_shares": 5803,
-  "twitter_shares": 174,
-  "reddit_shares": 144,
-  "linkedin_shares": 358,
-  "pinterest_shares": 106,
-  "stumbleupon_shares": 23,
-  "total_shares": 55074
+    "categories": [
+      "TV & Home Theater",
+      "TV & Home Theater Accessories",
+      "Home Theater Networking"
+    ],
+    "availability": "InStock",
+    "itemCondition": "NewCondition",
+    "model": "H2G2-42",
+    "sku": 9071056
+  }
 }
 
 ```
@@ -130,4 +142,3 @@ reddit_shares | Number of times product has been shared on Reddit
 linkedin_shares | Number of times product has been shared on LinkedIn
 pinterest_shares | Number of times product has been shared on Pinterest
 stumbleupon_shares | Number of times product has been shared on StumbleUpon
-total_shares | Number of times product has been shared on Social Media
