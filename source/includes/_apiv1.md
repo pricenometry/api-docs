@@ -251,14 +251,15 @@ curl "http://api.pricenometry.com/v1/amazon-offers/top/price"
       "url": "http://www.amazon.com/FREAKS-BROWNING-COMPLETE-LOBBY-SUPER/dp/B011390PHY?tag=pricelscom-20"
     },
     {
-      "id": "B0116PKWKA",
+      "id": "B00EN5R088",
       "container": "amazon-offers",
       "price": {
-        "price": 367000
+        "instant_rebate_price": 43838.9,
+        "original_price": 219194.48,
+        "price": 175355.58
       },
-      "availability": "Only 1 left in stock.",
-      "name": "1802 Draped Bust Half Dime AU50 NGC",
-      "url": "http://www.amazon.com/1802-Draped-Bust-Half-Dime/dp/B0116PKWKA?tag=pricelscom-20"
+      "name": "1139461 Trimode 9/6/4Monitors Expanded Ea Soma Technology -GEOEC9600",
+      "url": "http://www.amazon.com/4Monitors-Expanded-Soma-Technology-GEOEC9600/dp/B00EN5R088?tag=pricelscom-20"
     }
   ]
 }
@@ -282,7 +283,7 @@ fetch | false | Automatically crawl new data (default: true)
 social | false | Automatically fetch new social data (default: false)
 
 <aside class="notice">
-You must replace `:CONTAINER` with the available container you are finding top product for.
+You must replace `:CONTAINER` with the available container you are searching in and `:TYPE` with what you are comparing.
 </aside>
 
 
@@ -861,7 +862,7 @@ You must replace `:QUERY` with what you are searching for.
 
 
 
-## Match All Products in JSON
+## Match All Products
 
 > Request example
 
@@ -913,8 +914,6 @@ Match all Products based on a specific set of known parameters and values. Defau
 Parameter | Required | Description
 --------- | ------- | -----------
 access_token | true | Access token used to authenticate
-:CONTAINER | true| The available container you are searching in
-:QUERY | true | What you are searching for
 results | false | Number of Results you want back (default: 10)
 fetch | false | Automatically crawl new data (default: true)
 social | false | Automatically fetch new social data (default: false)
@@ -939,3 +938,71 @@ linkedin_shares | false | Number of times product has been shared on LinkedIn
 pinterest_shares | false | Number of times product has been shared on Pinterest
 stumbleupon_shares | false | Number of times product has been shared on StumbleUpon
 total_shares | false | Number of times product has been shared on Social Media
+
+
+
+
+
+## All Top Products
+
+> Request example
+
+```shell
+curl "http://api.pricenometry.com/v1/top/price"
+  -H "Authorization: Token token=YOUR-ACCESS-TOKEN"
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "response": {
+    "status": 200
+  },
+  "results": [
+    {
+      "id": "B011390PHY",
+      "container": "amazon-offers",
+      "price": {
+        "price": 850000
+      },
+      "availability": "Only 1 left in stock.",
+      "name": "FREAKS 1932 * TOD BROWNING * COMPLETE LOBBY CARD SET * MINT * SUPER RARE!!",
+      "url": "http://www.amazon.com/FREAKS-BROWNING-COMPLETE-LOBBY-SUPER/dp/B011390PHY?tag=pricelscom-20"
+    },
+    {
+      "id": "36144922",
+      "container": "walmart-offers",
+      "price": {
+        "maximum_price": 418348.46,
+        "minimum_price": 19.99,
+        "price": 202462.33,
+        "priceCurrency": "USD"
+      },
+      "availability": "Out of stock",
+      "name": "Surya Intersecting Lines Polyester Throw Pillow",
+      "url": "http://www.walmart.com/ip/Surya-Intersecting-Lines-Pillow/36144922"
+    }
+  ]
+}
+```
+
+Top Products in a container based on a specific set of known parameters and values. Default response is JSON, also available in XML using a *.xml extension.
+
+### HTTP Request
+
+`GET http://api.pricenometry.com/v1/top/:TYPE`
+
+### Query Parameters
+
+Parameter | Required | Description
+--------- | ------- | -----------
+access_token | true | Access token used to authenticate
+:TYPE | true | The Top Type you want to retrieve (example: price, facebook_shares, etc)
+results | false | Number of Results you want back (default: 10)
+fetch | false | Automatically crawl new data (default: true)
+social | false | Automatically fetch new social data (default: false)
+
+<aside class="notice">
+You must replace `:TYPE` with what you want compared.
+</aside>
