@@ -1006,3 +1006,53 @@ social | false | Automatically fetch new social data (default: false)
 <aside class="notice">
 You must replace `:TYPE` with what you want compared.
 </aside>
+
+
+
+
+
+## Batch All Products
+
+> Request example
+
+```shell
+curl "https://api.pricenometry.com/v1/batch"
+  -H "Authorization: Token token=YOUR-ACCESS-TOKEN"
+  -H "Content-Type: application/json"
+  -X POST -d '{"amazon-offers": ["B00DR0PDNE"], "walmart-offers": ["811571013579"]}'
+
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "response": {
+    "status": 200
+  },
+  "results": [
+    {
+      "id": "B00DR0PDNE",
+      "name": "Google Chromecast HDMI Streaming Media Player",
+      "container": "amazon-offers"
+    },
+    {
+      "id": "811571013579",
+      "name": "Google Chromecast HDMI Streaming Media Player",
+      "container": "walmart-offers"
+    }
+  ]
+}
+```
+
+Batch Products from any container based on a specific set of known ID's from each seperate container, maximum of 50 ID's total per request. Default response is JSON.
+
+### HTTP Request
+
+`POST https://api.pricenometry.com/v1/batch`
+
+### Query Parameters
+
+Parameter | Required | Description
+--------- | ------- | -----------
+access_token | true | Access token used to authenticate.
