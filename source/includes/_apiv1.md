@@ -102,6 +102,7 @@ Parameter | Required | Description
 access_token | true | Access token used to authenticate
 :CONTAINER | true| The available container you are searching in
 :QUERY | true | What you are searching for
+results | false | Number of Results you want back (default: 10)
 fetch | false | Automatically crawl new data (default: true)
 social | false | Automatically fetch new social data (default: false)
 
@@ -189,7 +190,7 @@ Parameter | Required | Description
 access_token | true | Access token used to authenticate
 :CONTAINER | true| The available container you are searching in
 :QUERY | true | What you are searching for
-results | false | Number of Results you want back (default: 1)
+results | false | Number of Results you want back (default: 10)
 fetch | false | Automatically crawl new data (default: true)
 social | false | Automatically fetch new social data (default: false)
 url | false | Unique URL for product
@@ -216,6 +217,72 @@ total_shares | false | Number of times product has been shared on Social Media
 
 <aside class="notice">
 You must replace `:CONTAINER` with the available container you are matching against.
+</aside>
+
+
+
+
+
+## Top Products
+
+> Request example
+
+```shell
+curl "http://api.pricenometry.com/v1/amazon-offers/top/price"
+  -H "Authorization: Token token=YOUR-ACCESS-TOKEN"
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "response": {
+    "status": 200
+  },
+  "results": [
+    {
+      "id": "B011390PHY",
+      "container": "amazon-offers",
+      "price": {
+        "price": 850000
+      },
+      "availability": "Only 1 left in stock.",
+      "name": "FREAKS 1932 * TOD BROWNING * COMPLETE LOBBY CARD SET * MINT * SUPER RARE!!",
+      "url": "http://www.amazon.com/FREAKS-BROWNING-COMPLETE-LOBBY-SUPER/dp/B011390PHY?tag=pricelscom-20"
+    },
+    {
+      "id": "B0116PKWKA",
+      "container": "amazon-offers",
+      "price": {
+        "price": 367000
+      },
+      "availability": "Only 1 left in stock.",
+      "name": "1802 Draped Bust Half Dime AU50 NGC",
+      "url": "http://www.amazon.com/1802-Draped-Bust-Half-Dime/dp/B0116PKWKA?tag=pricelscom-20"
+    }
+  ]
+}
+```
+
+Top Products in a container based on a specific set of known parameters and values. Default response is JSON, also available in XML using a *.xml extension.
+
+### HTTP Request
+
+`GET http://api.pricenometry.com/v1/:CONTAINER/top/:TYPE`
+
+### Query Parameters
+
+Parameter | Required | Description
+--------- | ------- | -----------
+access_token | true | Access token used to authenticate
+:CONTAINER | true| The available container you are searching in
+:TYPE | true | The Top Type you want to retrieve (example: price, facebook_shares, etc)
+results | false | Number of Results you want back (default: 10)
+fetch | false | Automatically crawl new data (default: true)
+social | false | Automatically fetch new social data (default: false)
+
+<aside class="notice">
+You must replace `:CONTAINER` with the available container you are finding top product for.
 </aside>
 
 
