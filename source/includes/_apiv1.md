@@ -133,7 +133,7 @@ curl "http://api.pricenometry.com/v1/walmart-offers/match?model=86002596-01"
   "results": [
     {
       "id": "811571013579",
-      "container": "walmart-offers"
+      "container": "walmart-offers",
       "name": "Google Chromecast HDMI Streaming Media Player",
       "social": {
         "facebook_shares": 42,
