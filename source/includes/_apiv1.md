@@ -223,12 +223,12 @@ You must replace `:CONTAINER` with the available container you are matching agai
 
 
 
-## Top Products
+## Trending Products
 
 > Request example
 
 ```shell
-curl "http://api.pricenometry.com/v1/amazon-offers/top/price"
+curl "http://api.pricenometry.com/v1/amazon-offers/trends/price"
   -H "Authorization: Token token=YOUR-ACCESS-TOKEN"
 ```
 
@@ -265,11 +265,11 @@ curl "http://api.pricenometry.com/v1/amazon-offers/top/price"
 }
 ```
 
-Top Products in a container based on a specific set of known parameters and values. Default response is JSON, also available in XML using a *.xml extension.
+Trending Products in a container based on a specific set of known parameters and values. Default response is JSON, also available in XML using a *.xml extension.
 
 ### HTTP Request
 
-`GET http://api.pricenometry.com/v1/:CONTAINER/top/:TYPE`
+`GET http://api.pricenometry.com/v1/:CONTAINER/trends/:TYPE`
 
 ### Query Parameters
 
@@ -277,7 +277,7 @@ Parameter | Required | Description
 --------- | ------- | -----------
 access_token | true | Access token used to authenticate
 :CONTAINER | true| The available container you are searching in
-:TYPE | true | The Top Type you want to retrieve (example: price, facebook_shares, etc)
+:TYPE | true | The Trend Type you want to retrieve (example: price, facebook_shares, etc)
 results | false | Number of Results you want back (default: 10)
 fetch | false | Automatically crawl new data (default: true)
 social | false | Automatically fetch new social data (default: false)
@@ -943,12 +943,12 @@ total_shares | false | Number of times product has been shared on Social Media
 
 
 
-## All Top Products
+## All Trending Products
 
 > Request example
 
 ```shell
-curl "http://api.pricenometry.com/v1/top/price"
+curl "http://api.pricenometry.com/v1/trends/price"
   -H "Authorization: Token token=YOUR-ACCESS-TOKEN"
 ```
 
@@ -987,18 +987,18 @@ curl "http://api.pricenometry.com/v1/top/price"
 }
 ```
 
-Top Products in a container based on a specific set of known parameters and values. Default response is JSON, also available in XML using a *.xml extension.
+Trending Products in a container based on a specific set of known parameters and values. Default response is JSON, also available in XML using a *.xml extension.
 
 ### HTTP Request
 
-`GET http://api.pricenometry.com/v1/top/:TYPE`
+`GET http://api.pricenometry.com/v1/trends/:TYPE`
 
 ### Query Parameters
 
 Parameter | Required | Description
 --------- | ------- | -----------
 access_token | true | Access token used to authenticate
-:TYPE | true | The Top Type you want to retrieve (example: price, facebook_shares, etc)
+:TYPE | true | The Trend Type you want to retrieve (example: price, facebook_shares, etc)
 results | false | Number of Results you want back (default: 10)
 fetch | false | Automatically crawl new data (default: true)
 social | false | Automatically fetch new social data (default: false)
